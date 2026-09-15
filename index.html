@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AntarKita — Ojek, Makanan, Kirim Barang, Belanja Pasar &amp; Travel dalam Satu Aplikasi</title>
+<meta name="description" content="AntarKita adalah super-app lokal dari Pekanbaru, Riau: pesan ojek & mobil, antar makanan, kirim paket, belanja pasar, mobil box, travel antar kota, dan dompet AntarPay — semua dalam satu aplikasi dengan tarif transparan.">
+<link rel="canonical" href="https://antarkitaindonesia.com/">
+<meta name="theme-color" content="#187A85">
+<meta name="robots" content="index,follow">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AntarKita">
+<meta property="og:locale" content="id_ID">
+<meta property="og:url" content="https://antarkitaindonesia.com/">
+<meta property="og:title" content="AntarKita — Antar apa saja, ke mana saja">
+<meta property="og:description" content="Ojek, mobil, makanan, kirim barang, belanja pasar, mobil box, travel antar kota, dan AntarPay. Satu aplikasi, tarif transparan. Mulai dari Pekanbaru, Riau.">
+<meta property="og:image" content="https://antarkitaindonesia.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Logo AntarKita dengan tagline Antar apa saja, ke mana saja">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AntarKita — Antar apa saja, ke mana saja">
+<meta name="twitter:description" content="Super-app lokal: ojek, makanan, kirim barang, belanja pasar, travel antar kota & AntarPay dalam satu aplikasi.">
+<meta name="twitter:image" content="https://antarkitaindonesia.com/assets/og-image.jpg">
+
+<!-- Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+
+<!-- Data terstruktur -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://antarkitaindonesia.com/#org",
+      "name": "AntarKita Indonesia",
+      "alternateName": "AntarKita",
+      "url": "https://antarkitaindonesia.com/",
+      "logo": "https://antarkitaindonesia.com/assets/apple-touch-icon.png",
+      "email": "erzamadana@gmail.com",
+      "founder": { "@type": "Person", "name": "Erza Pradipta Madana" },
+      "areaServed": { "@type": "Place", "name": "Pekanbaru, Riau, Indonesia" },
+      "contactPoint": { "@type": "ContactPoint", "contactType": "customer support", "email": "erzamadana@gmail.com", "availableLanguage": "id" }
+    },
+    {
+      "@type": "MobileApplication",
+      "name": "AntarKita: Ojek, Makan, Kirim",
+      "operatingSystem": "Android, Web",
+      "applicationCategory": "TravelApplication",
+      "url": "https://apps.antarkitaindonesia.com/",
+      "downloadUrl": "https://github.com/erzamadana-ui/antarkita/releases/latest",
+      "installUrl": "https://apps.antarkitaindonesia.com/",
+      "inLanguage": "id",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "IDR" },
+      "publisher": { "@id": "https://antarkitaindonesia.com/#org" },
+      "description": "Pesan ojek dan mobil, antar makanan, kirim barang, belanja di toko dan pasar tradisional, sewa mobil box, sampai perjalanan antar kota — semuanya dalam satu aplikasi dengan satu dompet AntarPay."
+    },
+    {
+      "@type": "MobileApplication",
+      "name": "AntarKita Mitra: Driver & Toko",
+      "operatingSystem": "Android, Web",
+      "applicationCategory": "BusinessApplication",
+      "url": "https://apps.antarkitaindonesia.com/mitra/",
+      "downloadUrl": "https://github.com/erzamadana-ui/antarkita/releases/latest",
+      "inLanguage": "id",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "IDR" },
+      "publisher": { "@id": "https://antarkitaindonesia.com/#org" },
+      "description": "Aplikasi resmi mitra AntarKita: driver ojek/mobil, merchant, pedagang pasar, mitra travel, dan mobil box. Terima pesanan, kelola usaha, dan cairkan pendapatan."
+    },
+    {
+      "@type": "WebSite",
+      "url": "https://antarkitaindonesia.com/",
+      "name": "AntarKita",
+      "inLanguage": "id",
+      "publisher": { "@id": "https://antarkitaindonesia.com/#org" }
+    }
+  ]
+}
+</script>
+
+<style>
+/* ===== Token ===== */
+:root{
+  --teal:#187A85; --teal-dark:#1A5E66; --teal-deep:#1B474C; --teal-light:#E7F2F3; --mint:#BFE9EA; --mint-bright:#BFF3EA;
+  --accent:#F5A524; --accent-light:#FFF3DD;
+  --ink:#101F21; --muted:#5C6B6D; --faint:#8A9899; --border:#E6ECEC; --bg:#FFFFFF; --bg-soft:#F5F8F8;
+  --radius:18px; --radius-lg:28px;
+  --shadow:0 1px 2px rgba(16,31,33,.06),0 8px 24px rgba(16,31,33,.08);
+  --shadow-lg:0 20px 60px rgba(27,71,76,.28);
+  --max:1160px; --gutter:20px;
+  --font:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:var(--teal);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{margin:0;line-height:1.15;letter-spacing:-.02em;font-weight:800}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--ink);color:#fff;padding:10px 16px;border-radius:8px;z-index:200}
+.skip:focus{left:16px}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--gutter)}
+.wrap>*{min-width:0}
+.section{padding-block:64px}
+@media (min-width:900px){.section{padding-block:96px}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
+.eyebrow::before{content:"";width:22px;height:3px;border-radius:3px;background:var(--accent)}
+.h2{font-size:clamp(28px,4vw,40px);max-width:22ch}
+.lead{color:var(--muted);font-size:clamp(16px,1.6vw,18px);max-width:60ch;margin-top:14px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ===== Tombol ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:16px;padding:14px 22px;border-radius:14px;border:2px solid transparent;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;text-decoration:none!important;line-height:1.2;white-space:nowrap}
+.btn:hover{transform:translateY(-1px)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-primary{background:var(--teal);color:#fff;box-shadow:0 8px 20px rgba(24,122,133,.28)}
+.btn-primary:hover{background:var(--teal-dark)}
+.btn-accent{background:var(--accent);color:var(--ink);box-shadow:0 8px 20px rgba(245,165,36,.3)}
+.btn-accent:hover{background:#e6971a}
+.btn-outline{background:transparent;color:var(--teal-deep);border-color:var(--border)}
+.btn-outline:hover{border-color:var(--teal);background:var(--teal-light)}
+.btn-ghost-light{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.28)}
+.btn-ghost-light:hover{background:rgba(255,255,255,.22)}
+.btn-white{background:#fff;color:var(--teal-deep)}
+.btn-white:hover{background:var(--mint-bright)}
+.btn[aria-disabled="true"]{background:#E9EEEE;color:var(--faint);box-shadow:none;cursor:not-allowed;transform:none;border-color:transparent}
+.btn-sm{padding:10px 16px;font-size:14px;border-radius:12px}
+
+/* ===== Navbar ===== */
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.88);backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--border)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:-.02em;color:var(--ink)}
+.brand:hover{text-decoration:none}
+.brand img{width:36px;height:36px;border-radius:50%}
+.brand em{font-style:normal;color:var(--teal)}
+.menu{display:none;align-items:center;gap:4px}
+.menu a{color:var(--ink);font-weight:600;font-size:15px;padding:8px 12px;border-radius:10px}
+.menu a:hover{background:var(--teal-light);text-decoration:none;color:var(--teal-deep)}
+.nav-cta{display:none}
+.burger{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;border:1px solid var(--border);background:#fff;cursor:pointer;color:var(--ink)}
+.burger svg{width:22px;height:22px}
+.mobile-menu{display:none;border-top:1px solid var(--border);background:#fff;padding:12px var(--gutter) 20px}
+.mobile-menu[data-open="true"]{display:block}
+.mobile-menu a{display:block;padding:12px 8px;font-weight:600;color:var(--ink);border-radius:10px}
+.mobile-menu a:hover{background:var(--teal-light);text-decoration:none}
+.mobile-menu .btn{width:100%;margin-top:8px}
+@media (min-width:900px){
+  .menu,.nav-cta{display:inline-flex}
+  .burger,.mobile-menu{display:none!important}
+}
+
+/* ===== Hero ===== */
+.hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#F3F9F9 0%,#FFFFFF 45%,#FFF8EC 100%)}
+.hero::before{content:"";position:absolute;inset:auto -20% -40% auto;width:70vw;max-width:820px;aspect-ratio:1;border-radius:50%;background:radial-gradient(closest-side,rgba(191,233,234,.55),rgba(191,233,234,0));pointer-events:none}
+.hero .wrap{display:grid;gap:40px;padding-block:48px 40px;position:relative}
+.hero-copy{max-width:600px}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);border-radius:999px;padding:6px 14px 6px 8px;font-size:13px;font-weight:600;color:var(--teal-deep);box-shadow:var(--shadow)}
+.pill .dot{width:22px;height:22px;border-radius:50%;background:var(--teal-light);display:inline-flex;align-items:center;justify-content:center;color:var(--teal)}
+.pill .dot svg{width:13px;height:13px}
+.hero h1{font-size:clamp(36px,6vw,60px);margin-top:20px;letter-spacing:-.03em}
+.hero h1 em{font-style:normal;color:var(--teal);position:relative;white-space:nowrap}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:.16em;background:var(--mint);z-index:-1;border-radius:4px}
+.hero .lead{margin-top:18px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero-note{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:22px;font-size:14px;color:var(--muted)}
+.hero-note li{display:inline-flex;align-items:center;gap:7px}
+.hero-note svg{width:16px;height:16px;color:var(--teal)}
+.hero-visual{display:flex;justify-content:center;align-items:flex-end;gap:16px;position:relative;padding-top:12px}
+.hero-visual .phone:nth-child(2){transform:translateY(-32px)}
+@media (min-width:900px){
+  .hero .wrap{grid-template-columns:1.05fr .95fr;align-items:center;padding-block:72px 64px;min-height:640px}
+  .hero-visual{justify-content:flex-end;gap:24px}
+  .hero-visual .phone:nth-child(2){transform:translateY(-48px)}
+}
+
+/* ===== Ponsel mockup ===== */
+.phone{width:min(41vw,236px);min-width:0;aspect-ratio:412/892;background:#0F2A28;border-radius:38px;padding:9px;box-shadow:var(--shadow-lg),inset 0 0 0 2px rgba(255,255,255,.08);position:relative;flex:none}
+.phone::before{content:"";position:absolute;top:16px;left:50%;transform:translateX(-50%);width:66px;height:7px;border-radius:99px;background:#0F2A28;z-index:2}
+.phone img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:30px;background:#fff;padding-top:26px}
+.phone-sm{width:min(38vw,180px);border-radius:30px;padding:7px}
+.phone-sm img{border-radius:24px;padding-top:20px}
+.phone-sm::before{width:48px;height:6px;top:12px}
+.phone-lg{width:min(80vw,280px)}
+@media (min-width:900px){.phone-lg{width:300px}}
+
+/* ===== Strip layanan (chip) ===== */
+.strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:#fff}
+.strip .wrap{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;padding-block:18px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:var(--teal-light);color:var(--teal-deep);font-weight:600;font-size:13px}
+.chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--teal)}
+
+/* ===== Layanan ===== */
+.services{display:grid;gap:14px;margin-top:40px;grid-template-columns:1fr}
+@media (min-width:560px){.services{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:960px){.services{grid-template-columns:repeat(3,1fr);gap:18px}}
+.svc{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:box-shadow .2s ease,transform .2s ease,border-color .2s ease}
+.svc:hover{box-shadow:var(--shadow);transform:translateY(-2px);border-color:var(--mint)}
+.svc .ic{flex:none;width:52px;height:52px;border-radius:16px;display:grid;place-items:center;color:#fff}
+.svc .ic svg{width:26px;height:26px}
+.svc h3{font-size:17px;font-weight:700;letter-spacing:-.01em}
+.svc p{color:var(--muted);font-size:14.5px;margin-top:4px;line-height:1.55}
+.c-ride{background:#187A85}.c-car{background:#2F80ED}.c-food{background:#E5484D}.c-send{background:#7B61FF}.c-box{background:#D97706}.c-shop{background:#0EA5E9}.c-market{background:#1FA363}.c-travel{background:#1D4ED8}.c-pay{background:#1B474C}
+
+/* ===== Cara kerja ===== */
+.how{background:var(--bg-soft)}
+.steps{display:grid;gap:28px;margin-top:44px}
+@media (min-width:900px){.steps{grid-template-columns:repeat(3,1fr);gap:32px}}
+.step{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:26px 22px 0;display:flex;flex-direction:column;align-items:center;text-align:center;overflow:hidden}
+.step .num{width:40px;height:40px;border-radius:50%;background:var(--ink);color:#fff;font-weight:800;display:grid;place-items:center;font-size:16px}
+.step h3{font-size:19px;margin-top:14px}
+.step p{color:var(--muted);font-size:15px;margin-top:8px;max-width:32ch}
+.step .shot{margin-top:22px;width:min(70%,210px);aspect-ratio:412/700;border-radius:26px 26px 0 0;overflow:hidden;box-shadow:0 -6px 30px rgba(27,71,76,.15);border:6px solid #0F2A28;border-bottom:0}
+.step .shot img{width:100%;height:100%;object-fit:cover;object-position:top}
+.how-foot{margin-top:28px;text-align:center;color:var(--muted);font-size:14.5px}
+
+/* ===== Mitra ===== */
+.mitra{background:linear-gradient(150deg,var(--teal-deep) 0%,var(--teal-dark) 55%,var(--teal) 100%);color:#fff;position:relative;overflow:hidden}
+.mitra::after{content:"";position:absolute;right:-10%;top:-30%;width:60vw;max-width:700px;aspect-ratio:1;border-radius:50%;background:radial-gradient(closest-side,rgba(191,243,234,.18),rgba(191,243,234,0));pointer-events:none}
+.mitra .eyebrow{color:var(--mint-bright)}
+.mitra .lead{color:rgba(255,255,255,.82)}
+.mitra .wrap{display:grid;gap:40px;position:relative}
+@media (min-width:960px){.mitra .wrap{grid-template-columns:1.1fr .9fr;align-items:center}}
+.roles{display:grid;gap:12px;margin-top:28px;grid-template-columns:1fr}
+@media (min-width:560px){.roles{grid-template-columns:repeat(2,1fr)}}
+.role{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:var(--radius);padding:16px;display:flex;gap:12px;align-items:flex-start}
+.role .ic{flex:none;width:40px;height:40px;border-radius:12px;background:rgba(191,243,234,.16);display:grid;place-items:center;color:var(--mint-bright)}
+.role .ic svg{width:22px;height:22px}
+.role h3{font-size:15.5px;font-weight:700}
+.role p{font-size:13.5px;color:rgba(255,255,255,.75);margin-top:3px;line-height:1.5}
+.benefits{display:grid;gap:10px;margin-top:26px}
+.benefits li{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:rgba(255,255,255,.92)}
+.benefits svg{flex:none;width:20px;height:20px;color:var(--accent);margin-top:2px}
+.mitra-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.mitra-req{margin-top:16px;font-size:13.5px;color:rgba(255,255,255,.68)}
+.mitra-visual{display:flex;justify-content:center;align-items:flex-end;gap:16px}
+.mitra-visual .phone:nth-child(2){transform:translateY(-36px)}
+
+/* ===== Keamanan ===== */
+.safe-grid{display:grid;gap:14px;margin-top:40px;grid-template-columns:1fr}
+@media (min-width:560px){.safe-grid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:960px){.safe-grid{grid-template-columns:repeat(3,1fr);gap:18px}}
+.safe{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--radius);padding:22px}
+.safe .ic{width:46px;height:46px;border-radius:14px;background:var(--teal-light);color:var(--teal);display:grid;place-items:center}
+.safe .ic svg{width:24px;height:24px}
+.safe h3{font-size:17px;margin-top:14px}
+.safe p{color:var(--muted);font-size:14.5px;margin-top:6px;line-height:1.55}
+
+/* ===== AntarPay ===== */
+.pay{background:var(--teal-light)}
+.pay .wrap{display:grid;gap:40px;align-items:center}
+@media (min-width:900px){.pay .wrap{grid-template-columns:.9fr 1.1fr}}
+.pay-visual{display:flex;justify-content:center}
+.pay-list{display:grid;gap:14px;margin-top:26px}
+.pay-list li{display:flex;gap:14px;align-items:flex-start;background:#fff;border-radius:16px;padding:14px 16px;border:1px solid rgba(24,122,133,.12)}
+.pay-list .ic{flex:none;width:38px;height:38px;border-radius:11px;background:var(--teal);color:#fff;display:grid;place-items:center}
+.pay-list .ic svg{width:20px;height:20px}
+.pay-list strong{display:block;font-size:15.5px}
+.pay-list span{font-size:14px;color:var(--muted)}
+.pay-note{margin-top:18px;font-size:13.5px;color:var(--muted)}
+
+/* ===== FAQ ===== */
+.faq-list{margin-top:36px;display:grid;gap:12px;max-width:860px}
+details{background:#fff;border:1px solid var(--border);border-radius:16px;padding:0 20px;transition:border-color .2s}
+details[open]{border-color:var(--mint);box-shadow:var(--shadow)}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-weight:700;font-size:16.5px}
+summary::-webkit-details-marker{display:none}
+summary .pm{flex:none;width:28px;height:28px;border-radius:50%;background:var(--teal-light);color:var(--teal);display:grid;place-items:center;transition:transform .2s}
+summary .pm svg{width:16px;height:16px}
+details[open] summary .pm{transform:rotate(45deg)}
+details p{padding:0 0 18px;color:var(--muted);font-size:15px;line-height:1.65}
+
+/* ===== Unduh ===== */
+.download{background:linear-gradient(140deg,#0F2A28 0%,var(--teal-deep) 60%,var(--teal-dark) 100%);color:#fff}
+.download .eyebrow{color:var(--mint-bright)}
+.download .lead{color:rgba(255,255,255,.8)}
+.dl-grid{display:grid;gap:16px;margin-top:36px}
+@media (min-width:900px){.dl-grid{grid-template-columns:repeat(3,1fr)}}
+.dl{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:12px}
+.dl .ic{width:48px;height:48px;border-radius:14px;background:rgba(255,255,255,.12);display:grid;place-items:center;color:#fff}
+.dl .ic svg{width:24px;height:24px}
+.dl h3{font-size:18px}
+.dl p{font-size:14.5px;color:rgba(255,255,255,.75);flex:1}
+.dl .btn{width:100%}
+.dl .tag{display:inline-flex;align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--accent);color:var(--ink);padding:4px 10px;border-radius:999px}
+.dl-mitra{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;font-size:15px;color:rgba(255,255,255,.85);border-top:1px solid rgba(255,255,255,.14);padding-top:24px}
+.dl-mitra .sep{display:none}
+@media (min-width:700px){.dl-mitra .sep{display:inline}}
+.dl-mitra a.link{color:var(--mint-bright);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+
+/* ===== Footer ===== */
+footer{background:#0B1C1E;color:rgba(255,255,255,.72);font-size:14px}
+.foot-grid{display:grid;gap:32px;padding-block:52px 32px}
+@media (min-width:760px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr 1fr}}
+footer .brand{color:#fff}
+footer .brand em{color:var(--mint-bright)}
+footer h4{color:#fff;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;font-weight:700}
+footer ul li+li{margin-top:10px}
+footer a{color:rgba(255,255,255,.72)}
+footer a:hover{color:#fff}
+.foot-about p{margin-top:14px;max-width:38ch;line-height:1.6}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-block:20px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.55)}
+
+/* ===== Animasi reveal ===== */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#utama">Langsung ke konten</a>
+
+<!-- ===== NAVBAR ===== -->
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="AntarKita — beranda">
+      <img src="assets/logo.svg" width="36" height="36" alt="">
+      <span>Antar<em>Kita</em></span>
+    </a>
+    <nav class="menu" aria-label="Navigasi utama">
+      <a href="#layanan">Layanan</a>
+      <a href="#cara-kerja">Cara kerja</a>
+      <a href="#mitra">Mitra</a>
+      <a href="#keamanan">Keamanan</a>
+      <a href="#antarpay">AntarPay</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:10px">
+      <a class="btn btn-primary btn-sm nav-cta" href="https://apps.antarkitaindonesia.com/" rel="noopener">Buka aplikasi</a>
+      <button class="burger" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="menu-mobile" id="burger">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="menu-mobile" data-open="false">
+    <a href="#layanan">Layanan</a>
+    <a href="#cara-kerja">Cara kerja</a>
+    <a href="#mitra">Untuk Mitra</a>
+    <a href="#keamanan">Keamanan</a>
+    <a href="#antarpay">AntarPay</a>
+    <a href="#faq">FAQ</a>
+    <a class="btn btn-primary" href="https://apps.antarkitaindonesia.com/" rel="noopener">Buka aplikasi pelanggan</a>
+    <a class="btn btn-outline" href="https://apps.antarkitaindonesia.com/mitra/" rel="noopener">Gabung jadi Mitra</a>
+  </div>
+</header>
+
+<main id="utama">
+
+<!-- ===== HERO ===== -->
+<section class="hero" aria-labelledby="judul-hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <!-- [ASUMSI] Wilayah: "mulai dari Pekanbaru, Riau" dan "hadir bertahap di kota-kota Sumatra" sesuai brief; tidak ada angka kota/pengguna. -->
+      <span class="pill"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>Mulai dari Pekanbaru, Riau · hadir bertahap di kota-kota Sumatra</span>
+      <h1 id="judul-hero">Antar apa saja, <em>ke mana saja.</em></h1>
+      <p class="lead">AntarKita adalah super-app lokal untuk kebutuhan harian Anda: pesan ojek dan mobil, antar makanan, kirim barang, belanja di toko dan pasar tradisional, sewa mobil box, sampai perjalanan antar kota — semua dalam satu aplikasi dengan satu dompet AntarPay.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="https://apps.antarkitaindonesia.com/" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          Pesan sebagai Pelanggan
+        </a>
+        <a class="btn btn-accent" href="https://apps.antarkitaindonesia.com/mitra/" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M7 17a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm14 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM5 17l2-7h7l3 4h4"/></svg>
+          Gabung jadi Mitra
+        </a>
+      </div>
+      <ul class="hero-note" aria-label="Ketersediaan aplikasi">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Web app, tanpa instal</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>APK Android tersedia</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="9"/></svg>Segera di Google Play</li>
+      </ul>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="phone"><img src="assets/pelanggan-ride.webp" width="560" height="1212" alt="" fetchpriority="high"></div>
+      <div class="phone"><img src="assets/pelanggan-beranda.webp" width="560" height="1212" alt="" fetchpriority="high"></div>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-label="Daftar layanan">
+  <div class="wrap">
+    <span class="chip">AntarRide</span><span class="chip">AntarCar</span><span class="chip">AntarFood</span><span class="chip">AntarSend</span><span class="chip">AntarBox</span><span class="chip">AntarShop</span><span class="chip">AntarMarket</span><span class="chip">AntarTravel</span><span class="chip">AntarPay</span>
+  </div>
+</div>
+
+<!-- ===== LAYANAN ===== -->
+<section class="section" id="layanan" aria-labelledby="judul-layanan">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Layanan</span>
+      <h2 class="h2" id="judul-layanan">Semua layanan dalam satu aplikasi</h2>
+      <p class="lead">Sembilan layanan untuk kebutuhan harian, dari jalan ke kantor sampai belanja sayur di pasar — dibayar dari satu dompet.</p>
+    </div>
+    <div class="services">
+      <article class="svc rv">
+        <div class="ic c-ride"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5.5" cy="17" r="3"/><circle cx="18.5" cy="17" r="3"/><path d="M5.5 17 9 9h4l3 5h2.5M13 9l2-3h3M9 9H6.5"/></svg></div>
+        <div><h3>AntarRide</h3><p>Ojek motor cepat dan hemat untuk perjalanan dalam kota. Tarif jelas sebelum pesan.</p></div>
+      </article>
+      <article class="svc rv">
+        <div class="ic c-car"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13l2-5.5A2 2 0 0 1 6.9 6h10.2a2 2 0 0 1 1.9 1.5L21 13v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-5z"/><path d="M3 13h18M7 16h.01M17 16h.01"/></svg></div>
+        <div><h3>AntarCar</h3><p>Mobil untuk perjalanan nyaman bersama keluarga atau bawaan banyak.</p></div>
+      </article>
+      <article class="svc rv">
+        <div class="ic c-food"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15h16a8 8 0 0 0-16 0z"/><path d="M2 19h20M12 7V5"/></svg></div>
+        <div><h3>AntarFood</h3><p>Pesan makanan dari warung, restoran, dan UMKM favorit di sekitar Anda; lacak pesanan sampai tiba.</p></div>
+      </article>
+      <article class="svc rv">
+        <div class="ic c-send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3 10 14"/><path d="M21 3 14 21l-4-7-7-4z"/></svg></div>
+        <div><h3>AntarSend</h3><p>Kirim dokumen dan paket dalam kota, ada foto bukti pengiriman dan PIN serah terima.</p></div>
+      </article>
+      <article class="svc rv">
+        <div class="ic c-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg></div>
+        <div><h3>AntarBox</h3><p>Mobil box untuk pindahan, angkut barang besar, atau kirim stok usaha.</p></div>
+      </article>
+      <article class="svc rv">
+        <div class="ic c-shop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l1 13H5z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg></div>
+        <div><h3>AntarShop</h3><p>Titip beli di toko: tulis daftar belanja, mitra membelikan dan mengantar.</p></div>
+      </article>
+      <article class="svc rv">
+        <div class="ic c-market"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10l1.5-5h15L21 10"/><path d="M3 10a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/><path d="M5 12v8h14v-8M10 20v-5h4v5"/></svg></div>
+        <div><h3>AntarMarket</h3><p>Belanja sayur, buah, daging, ikan, dan sembako langsung dari pedagang pasar tradisional dengan harga pasar hari itu.</p></div>
+      </article>
+      <article class="svc rv">
+        <div class="ic c-travel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16V7a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v9"/><path d="M4 11h16M4 16h16v2H4zM7 21v-3M17 21v-3"/></svg></div>
+        <div><h3>AntarTravel</h3><p>Perjalanan antar kota dengan mitra travel terverifikasi: pilih jadwal, kursi, atau sewa privat satu mobil.</p></div>
+      </article>
+      <article class="svc rv">
+        <div class="ic c-pay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M16 15h2"/></svg></div>
+        <div><h3>AntarPay</h3><p>Dompet dalam aplikasi untuk membayar semua layanan tanpa uang tunai. Top-up lewat transfer bank, e-wallet, dan QRIS.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CARA KERJA ===== -->
+<section class="section how" id="cara-kerja" aria-labelledby="judul-cara">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Cara kerja</span>
+      <h2 class="h2" id="judul-cara">Tiga langkah, pesanan jalan</h2>
+      <p class="lead">Daftar cukup dengan email dan nomor HP. Setelah itu, memesan apa pun semudah ini.</p>
+    </div>
+    <ol class="steps">
+      <li class="step rv">
+        <span class="num" aria-hidden="true">1</span>
+        <h3>Pilih layanan &amp; titik</h3>
+        <p>Pilih layanan, tentukan titik jemput atau antar di peta, atau pilih menu dan lapak.</p>
+        <div class="shot"><img src="assets/pelanggan-peta.webp" width="560" height="1212" loading="lazy" alt="Layar memilih titik jemput di peta dengan tombol Pilih lokasi ini"></div>
+      </li>
+      <li class="step rv">
+        <span class="num" aria-hidden="true">2</span>
+        <h3>Cek estimasi, pilih bayar</h3>
+        <p>Lihat estimasi total termasuk biaya layanan, pilih tunai atau AntarPay, lalu pesan.</p>
+        <div class="shot"><img src="assets/pelanggan-ride.webp" width="560" height="1212" loading="lazy" alt="Layar AntarRide dengan pilihan kelas kendaraan dan estimasi tarif"></div>
+      </li>
+      <li class="step rv">
+        <span class="num" aria-hidden="true">3</span>
+        <h3>Pantau &amp; beri nilai</h3>
+        <p>Pantau mitra di peta secara real-time, chat bila perlu, dan beri penilaian setelah selesai.</p>
+        <div class="shot"><img src="assets/pelanggan-lacak.webp" width="560" height="1212" loading="lazy" alt="Layar pelacakan mitra di peta dengan status pesanan"></div>
+      </li>
+    </ol>
+    <p class="how-foot">Alamat rumah dan kantor tersimpan, riwayat pesanan siap dipesan ulang, dan promo untuk pengguna setia.</p>
+  </div>
+</section>
+
+<!-- ===== MITRA ===== -->
+<section class="section mitra" id="mitra" aria-labelledby="judul-mitra">
+  <div class="wrap">
+    <div>
+      <div class="rv">
+        <span class="eyebrow">Untuk Mitra</span>
+        <h2 class="h2" id="judul-mitra">Penghasilan tambahan, satu aplikasi</h2>
+        <p class="lead">AntarKita Mitra adalah aplikasi resmi untuk driver, pemilik warung dan toko, pedagang pasar, operator travel, dan pemilik mobil box. Terima pesanan, kelola usaha, dan cairkan pendapatan dari satu aplikasi.</p>
+      </div>
+      <div class="roles">
+        <div class="role rv">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5.5" cy="17" r="3"/><circle cx="18.5" cy="17" r="3"/><path d="M5.5 17 9 9h4l3 5h2.5M13 9l2-3h3"/></svg></span>
+          <div><h3>Driver motor, mobil &amp; box</h3><p>AntarRide, AntarCar, AntarFood, AntarSend, AntarShop, AntarMarket, AntarBox.</p></div>
+        </div>
+        <div class="role rv">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1.5-4h15L21 9"/><path d="M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/><path d="M5 11v9h14v-9"/></svg></span>
+          <div><h3>Merchant</h3><p>Warung, restoran, dan toko: kelola menu, stok, jam buka, dan pesanan AntarFood/AntarShop.</p></div>
+        </div>
+        <div class="role rv">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16M6 20v-8h12v8"/><path d="M3 12 5 5h14l2 7"/><path d="M9 12v8M15 12v8"/></svg></span>
+          <div><h3>Pedagang pasar</h3><p>Daftarkan lapak, perbarui harga hari ini, terima pesanan belanja AntarMarket.</p></div>
+        </div>
+        <div class="role rv">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16V7a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v9"/><path d="M4 11h16M4 16h16v2H4zM7 21v-3M17 21v-3"/></svg></span>
+          <div><h3>Mitra travel</h3><p>Buat jadwal antar kota, tentukan kursi dan tarif, terima booking kursi atau sewa privat.</p></div>
+        </div>
+      </div>
+      <ul class="benefits">
+        <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Jadwal fleksibel.</strong> Nyalakan status Online kapan pun Anda siap, matikan kapan pun ingin istirahat.</span></li>
+        <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Pendapatan bersih tampil sebelum menerima.</strong> Komisi platform tercantum transparan di setiap pesanan.</span></li>
+        <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Cairkan ke rekening bank kapan saja</strong> sesuai batas minimum; pendapatan masuk otomatis ke saldo setelah pesanan selesai.</span></li>
+        <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Terlindungi dari sengketa</strong> dengan PIN serah terima dan foto bukti pengiriman.</span></li>
+        <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Mode ganda.</strong> Satu akun bisa jadi driver sekaligus merchant atau pedagang — beralih dengan satu ketukan.</span></li>
+      </ul>
+      <div class="mitra-cta rv">
+        <a class="btn btn-accent" href="https://apps.antarkitaindonesia.com/mitra/" rel="noopener">Daftar jadi Mitra sekarang</a>
+        <a class="btn btn-ghost-light" href="https://github.com/erzamadana-ui/antarkita/releases/latest" rel="noopener">Unduh APK Mitra</a>
+      </div>
+      <p class="mitra-req rv">Syarat: usia minimal 18 tahun, KTP, serta dokumen kendaraan atau usaha yang berlaku. Pendaftaran cepat dengan unggah SIM, STNK, KTP, dan foto kendaraan. Mitra adalah mitra usaha independen.</p>
+    </div>
+    <div class="mitra-visual" aria-hidden="true">
+      <div class="phone"><img src="assets/mitra-beranda.webp" width="560" height="1212" loading="lazy" alt=""></div>
+      <div class="phone"><img src="assets/mitra-order.webp" width="560" height="1212" loading="lazy" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KEAMANAN ===== -->
+<section class="section" id="keamanan" aria-labelledby="judul-aman">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Aman &amp; transparan</span>
+      <h2 class="h2" id="judul-aman">Dibangun agar Anda tenang di setiap pesanan</h2>
+      <p class="lead">Pusat Keamanan ada di dalam aplikasi pelanggan maupun mitra — bukan fitur tambahan, tapi bagian dari cara AntarKita bekerja.</p>
+    </div>
+    <div class="safe-grid">
+      <article class="safe rv">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16l-1.5 4H5.5zM6 11v6M18 11v6M3 17h18"/><path d="M8 4h8"/></svg></span>
+        <h3>Tarif jelas sebelum pesan</h3>
+        <p>Estimasi total tampil di muka, termasuk biaya layanan. Tidak ada kejutan di akhir perjalanan.</p>
+      </article>
+      <article class="safe rv">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M9 11h6M9 14h4"/></svg></span>
+        <h3>Chat &amp; telepon di dalam aplikasi</h3>
+        <p>Berkomunikasi dengan mitra tanpa membagikan nomor HP. Nomor Anda tidak dibagikan ke siapa pun.</p>
+      </article>
+      <article class="safe rv">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7z"/><path d="M12 8v5M12 16h.01"/></svg></span>
+        <h3>Tombol SOS &amp; kontak darurat</h3>
+        <p>Pusat Keamanan dengan SOS, kontak darurat, dan laporan insiden — untuk pelanggan dan mitra.</p>
+      </article>
+      <article class="safe rv">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.6M8.2 13.2l7.6 4.6"/></svg></span>
+        <h3>Bagikan perjalanan</h3>
+        <p>Kirim tautan pelacakan ke keluarga agar mereka bisa memantau posisi Anda sampai tiba.</p>
+      </article>
+      <article class="safe rv">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/><path d="M15 12l2 2 4-4"/></svg></span>
+        <h3>Mitra terverifikasi</h3>
+        <p>Foto, nama, dan plat nomor mitra tampil sebelum jemput. Dokumen mitra diperiksa saat pendaftaran, ditambah verifikasi wajah.</p>
+      </article>
+      <article class="safe rv">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 15v2"/></svg></span>
+        <h3>PIN serah terima &amp; bukti foto</h3>
+        <p>Paket dan belanjaan diserahkan dengan PIN dan foto bukti, ditambah tiket aduan ke CS bila ada masalah. Laporkan atau blokir pengguna langsung dari aplikasi.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ANTARPAY ===== -->
+<section class="section pay" id="antarpay" aria-labelledby="judul-pay">
+  <div class="wrap">
+    <div class="pay-visual rv" aria-hidden="true">
+      <div class="phone phone-lg"><img src="assets/pelanggan-pay.webp" width="560" height="1212" loading="lazy" alt=""></div>
+    </div>
+    <div>
+      <div class="rv">
+        <span class="eyebrow">AntarPay</span>
+        <h2 class="h2" id="judul-pay">Satu dompet untuk semua layanan</h2>
+        <p class="lead">Bayar ojek, makanan, paket, belanja pasar, sampai tiket travel tanpa uang tunai. Atau tetap bayar tunai — Anda yang pilih.</p>
+      </div>
+      <ul class="pay-list">
+        <li class="rv">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
+          <div><strong>Top-up mudah</strong><span>Transfer bank, e-wallet (GoPay, OVO, DANA, ShopeePay), QRIS, dan virtual account — diproses Midtrans.</span></div>
+        </li>
+        <li class="rv">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg></span>
+          <div><strong>Riwayat &amp; mutasi rapi</strong><span>Semua pesanan dan pergerakan saldo tercatat, mudah dicek kapan saja.</span></div>
+        </li>
+        <li class="rv">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <div><strong>Saldo tertutup, tidak menyimpan data kartu</strong><span>AntarPay hanya berlaku di dalam AntarKita. Pembayaran nontunai diproses oleh Midtrans, penyelenggara payment gateway berizin Bank Indonesia.</span></div>
+        </li>
+        <li class="rv">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg></span>
+          <div><strong>Untuk mitra: pendapatan masuk otomatis</strong><span>Saldo bertambah setelah pesanan selesai dan bisa dicairkan ke rekening bank.</span></div>
+        </li>
+      </ul>
+      <p class="pay-note">AntarPay bukan uang elektronik berizin dan tidak dapat ditransfer antar pengguna; AntarKita tidak memberikan pinjaman dan tidak menawarkan produk investasi.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section" id="faq" aria-labelledby="judul-faq">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="h2" id="judul-faq">Pertanyaan yang sering diajukan</h2>
+    </div>
+    <div class="faq-list">
+      <details class="rv">
+        <summary>Di mana AntarKita sudah bisa dipakai?<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <!-- [ASUMSI] Cakupan wilayah mengikuti brief; perbarui saat kota baru resmi dibuka. -->
+        <p>AntarKita dimulai dari Pekanbaru, Riau, dan hadir bertahap di kota-kota Sumatra. Buka aplikasi dan izinkan lokasi — bila layanan sudah tersedia di sekitar Anda, mitra terdekat akan tampil di peta.</p>
+      </details>
+      <details class="rv">
+        <summary>Apakah harus instal aplikasi?<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p>Tidak wajib. AntarKita bisa dipakai langsung dari peramban di <a href="https://apps.antarkitaindonesia.com/" rel="noopener">apps.antarkitaindonesia.com</a>. Untuk Android tersedia APK yang dapat diunduh dari halaman rilis resmi kami. Versi Google Play sedang disiapkan.</p>
+      </details>
+      <details class="rv">
+        <summary>Bagaimana cara bayar? Bisa tunai?<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p>Bisa. Setiap pesanan bisa dibayar tunai langsung ke mitra atau dengan saldo AntarPay. Saldo diisi lewat transfer bank, e-wallet, atau QRIS yang diproses Midtrans. Estimasi total selalu tampil sebelum Anda menekan tombol pesan.</p>
+      </details>
+      <details class="rv">
+        <summary>Apakah nomor HP saya dibagikan ke mitra?<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p>Tidak. Chat dan panggilan suara berjalan di dalam aplikasi, sehingga pelanggan dan mitra tidak perlu bertukar nomor HP. Lokasi hanya dibagikan ke lawan transaksi selama pesanan berjalan.</p>
+      </details>
+      <details class="rv">
+        <summary>Apa syarat menjadi mitra AntarKita?<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p>Usia minimal 18 tahun, KTP, dan dokumen kendaraan atau usaha yang berlaku (SIM, STNK, foto kendaraan untuk driver; NPWP, izin usaha, atau sertifikat halal opsional untuk merchant). Daftar lewat aplikasi <a href="https://apps.antarkitaindonesia.com/mitra/" rel="noopener">AntarKita Mitra</a>; dokumen lengkap diverifikasi otomatis.</p>
+      </details>
+      <details class="rv">
+        <summary>Bagaimana cara menghapus akun atau menghubungi bantuan?<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p>Akun bisa dihapus dari menu <strong>Akun → Lainnya → Hapus akun</strong> di aplikasi, atau lewat halaman <a href="https://apps.antarkitaindonesia.com/hapus-akun/" rel="noopener">permintaan hapus akun</a>. Untuk bantuan, buat tiket aduan di aplikasi atau kirim email ke <a href="mailto:erzamadana@gmail.com">erzamadana@gmail.com</a>.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== UNDUH ===== -->
+<section class="section download" id="unduh" aria-labelledby="judul-unduh">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Mulai sekarang</span>
+      <h2 class="h2" id="judul-unduh">Coba AntarKita hari ini</h2>
+      <p class="lead">Pakai langsung di peramban, atau pasang APK Android. Versi Google Play menyusul.</p>
+    </div>
+    <div class="dl-grid">
+      <div class="dl rv">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
+        <h3>Web app</h3>
+        <p>Tanpa instal, jalan di Android, iPhone, maupun laptop. Cukup buka tautannya.</p>
+        <a class="btn btn-white" href="https://apps.antarkitaindonesia.com/" rel="noopener">Buka web app</a>
+      </div>
+      <div class="dl rv">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg></span>
+        <h3>APK Android</h3>
+        <p>Unduh berkas APK terbaru dari halaman rilis resmi AntarKita di GitHub, lalu pasang di ponsel Anda.</p>
+        <a class="btn btn-accent" href="https://github.com/erzamadana-ui/antarkita/releases/latest" rel="noopener">Unduh APK terbaru</a>
+      </div>
+      <div class="dl rv">
+        <span class="tag">Segera</span>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5v17l13-8.5z"/><path d="M5 3.5 15 13M5 20.5 15 11"/></svg></span>
+        <h3>Google Play</h3>
+        <p>Versi Google Play sedang disiapkan. Tautan akan aktif begitu aplikasi terbit di Google Play.</p>
+        <span class="btn" role="button" aria-disabled="true" tabindex="-1">Segera di Google Play</span>
+      </div>
+    </div>
+    <div class="dl-mitra rv">
+      <span>Ingin jadi mitra?</span>
+      <a class="link" href="https://apps.antarkitaindonesia.com/mitra/" rel="noopener">Buka aplikasi AntarKita Mitra</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <a class="link" href="https://github.com/erzamadana-ui/antarkita/releases/latest" rel="noopener">APK Mitra ada di halaman rilis yang sama</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a class="brand" href="#" aria-label="AntarKita — kembali ke atas">
+          <img src="assets/logo.svg" width="36" height="36" alt="" loading="lazy">
+          <span>Antar<em>Kita</em></span>
+        </a>
+        <p>Super-app lokal Indonesia untuk ojek, makanan, kirim barang, belanja pasar, mobil box, travel antar kota, dan dompet AntarPay. Antar apa saja, bersama kita.</p>
+      </div>
+      <div>
+        <h4>Aplikasi</h4>
+        <ul>
+          <li><a href="https://apps.antarkitaindonesia.com/" rel="noopener">Web app pelanggan</a></li>
+          <li><a href="https://apps.antarkitaindonesia.com/mitra/" rel="noopener">Aplikasi Mitra</a></li>
+          <li><a href="https://github.com/erzamadana-ui/antarkita/releases/latest" rel="noopener">Unduh APK Android</a></li>
+          <li><span style="color:rgba(255,255,255,.45)">Google Play — segera</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="https://apps.antarkitaindonesia.com/privacy/" rel="noopener">Kebijakan Privasi</a></li>
+          <li><a href="https://apps.antarkitaindonesia.com/terms/" rel="noopener">Syarat &amp; Ketentuan</a></li>
+          <li><a href="https://apps.antarkitaindonesia.com/hapus-akun/" rel="noopener">Permintaan hapus akun</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontak</h4>
+        <ul>
+          <li><a href="mailto:erzamadana@gmail.com">erzamadana@gmail.com</a></li>
+          <li>Pekanbaru, Riau, Indonesia</li>
+          <li><a href="#faq">Pusat bantuan (FAQ)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 AntarKita Indonesia. Hak cipta dilindungi.</span>
+      <span>Mitra adalah mitra usaha independen. Nama layanan AntarRide, AntarCar, AntarFood, AntarSend, AntarBox, AntarShop, AntarMarket, AntarTravel, dan AntarPay adalah bagian dari platform AntarKita.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Menu mobile
+  var b=document.getElementById('burger'),m=document.getElementById('menu-mobile');
+  function setOpen(o){m.setAttribute('data-open',o?'true':'false');b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',o?'Tutup menu':'Buka menu');}
+  b.addEventListener('click',function(){setOpen(m.getAttribute('data-open')!=='true');});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setOpen(false);});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')setOpen(false);});
+  // Reveal saat scroll (dinonaktifkan bila prefers-reduced-motion)
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){els.forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  els.forEach(function(e){io.observe(e);});
+})();
+</script>
+</body>
+</html>
