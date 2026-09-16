@@ -16,6 +16,8 @@ Riset 15 Sep 2026 (WebFetch; halaman Shopee Food dan gojek.com/gopartner tidak d
 ## Asumsi yang ditandai di HTML (`[ASUMSI]`)
 - Cakupan wilayah: "Mulai dari Pekanbaru, Riau · hadir bertahap di kota-kota Sumatra" (pill hero dan jawaban FAQ pertama). Perbarui saat kota baru resmi dibuka.
 - Google Play: dinyatakan "sedang disiapkan", tombol nonaktif (`aria-disabled`), tanpa tautan.
+- Alamat usaha ditampilkan persis "Kahuripan Terrace VII-21" (footer + JSON-LD `address.streetAddress`) — kota/kode pos belum dikonfirmasi pemilik, sengaja tidak ditambahkan.
+- Jam layanan CS "Setiap hari 07.00–22.00 WIB" (footer + FAQ "Bagaimana menghubungi CS?") — belum dikonfirmasi; ganti bila berbeda. Nomor WA/CS resmi 0811-7805-600 (wa.me/628117805600) sudah terkonfirmasi.
 - Screenshot yang dipakai adalah tangkapan build web dengan data tiruan (lihat catatan di PLAY-STORE-LISTING.md §7); ganti dengan tangkapan HP asli sebelum rilis produksi bila diinginkan.
 
 ## Catatan deploy

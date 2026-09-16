@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>AntarKita — Ojek, Makanan, Kirim Barang, Belanja Pasar &amp; Travel dalam Satu Aplikasi</title>
-<meta name="description" content="AntarKita adalah super-app lokal dari Pekanbaru, Riau: pesan ojek & mobil, antar makanan, kirim paket, belanja pasar, mobil box, travel antar kota, dan dompet AntarPay — semua dalam satu aplikasi dengan tarif transparan.">
+<title>AntarKita — Ojek, Makanan, Kirim &amp; Belanja dalam Satu Aplikasi</title>
+<meta name="description" content="AntarKita: super-app lokal untuk ojek, mobil, antar makanan, kirim barang, belanja pasar, mobil box &amp; travel antar kota — satu aplikasi, satu dompet AntarPay.">
 <link rel="canonical" href="https://antarkitaindonesia.com/">
 <meta name="theme-color" content="#187A85">
 <meta name="robots" content="index,follow">
@@ -16,14 +16,14 @@
 <meta property="og:site_name" content="AntarKita">
 <meta property="og:locale" content="id_ID">
 <meta property="og:url" content="https://antarkitaindonesia.com/">
-<meta property="og:title" content="AntarKita — Antar apa saja, ke mana saja">
+<meta property="og:title" content="AntarKita — Ojek, Makanan, Kirim &amp; Belanja dalam Satu Aplikasi">
 <meta property="og:description" content="Ojek, mobil, makanan, kirim barang, belanja pasar, mobil box, travel antar kota, dan AntarPay. Satu aplikasi, tarif transparan. Mulai dari Pekanbaru, Riau.">
 <meta property="og:image" content="https://antarkitaindonesia.com/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Logo AntarKita dengan tagline Antar apa saja, ke mana saja">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AntarKita — Antar apa saja, ke mana saja">
+<meta name="twitter:title" content="AntarKita — Ojek, Makanan, Kirim &amp; Belanja dalam Satu Aplikasi">
 <meta name="twitter:description" content="Super-app lokal: ojek, makanan, kirim barang, belanja pasar, travel antar kota & AntarPay dalam satu aplikasi.">
 <meta name="twitter:image" content="https://antarkitaindonesia.com/assets/og-image.jpg">
 
@@ -45,9 +45,18 @@
       "url": "https://antarkitaindonesia.com/",
       "logo": "https://antarkitaindonesia.com/assets/apple-touch-icon.png",
       "email": "erzamadana@gmail.com",
+      "telephone": "+62-811-7805-600",
       "founder": { "@type": "Person", "name": "Erza Pradipta Madana" },
       "areaServed": { "@type": "Place", "name": "Pekanbaru, Riau, Indonesia" },
-      "contactPoint": { "@type": "ContactPoint", "contactType": "customer support", "email": "erzamadana@gmail.com", "availableLanguage": "id" }
+      "address": { "@type": "PostalAddress", "streetAddress": "Kahuripan Terrace VII-21", "addressCountry": "ID" },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+62-811-7805-600",
+        "email": "erzamadana@gmail.com",
+        "url": "https://wa.me/628117805600",
+        "availableLanguage": "id"
+      }
     },
     {
       "@type": "MobileApplication",
@@ -309,7 +318,27 @@ footer ul li+li{margin-top:10px}
 footer a{color:rgba(255,255,255,.72)}
 footer a:hover{color:#fff}
 .foot-about p{margin-top:14px;max-width:38ch;line-height:1.6}
+.foot-contact li{display:flex;gap:10px;align-items:flex-start;line-height:1.5}
+.foot-contact svg{flex:none;width:18px;height:18px;margin-top:2px;color:var(--mint-bright)}
+.foot-contact a{font-weight:600;color:#fff}
+.foot-contact .lbl{display:block;font-size:12px;color:rgba(255,255,255,.5)}
+.foot-contact address{font-style:normal}
 .foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-block:20px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.55)}
+/* Ruang ekstra di bawah footer agar tombol WA mengambang tidak menutupi teks hak cipta di akhir halaman */
+.foot-bottom{padding-bottom:calc(20px + 64px + env(safe-area-inset-bottom,0px))}
+@media (min-width:900px){.foot-bottom{padding-bottom:20px;padding-right:200px}}
+
+/* ===== Tombol WhatsApp mengambang ===== */
+.wa-fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:90;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-width:56px;height:56px;padding:0 14px;border-radius:999px;background:#25D366;color:#fff;font-weight:700;font-size:15px;box-shadow:0 10px 28px rgba(16,31,33,.28);text-decoration:none!important;transition:transform .15s ease,box-shadow .15s ease}
+.wa-fab:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(16,31,33,.32);background:#1EBE5A;color:#fff}
+.wa-fab svg{width:28px;height:28px;flex:none}
+.wa-fab span{display:none}
+@media (min-width:900px){
+  .wa-fab{right:24px;bottom:24px;padding:0 22px 0 18px}
+  .wa-fab span{display:inline}
+}
+@media (prefers-reduced-motion:reduce){.wa-fab,.wa-fab:hover{transition:none;transform:none}}
+@media print{.wa-fab{display:none}}
 
 /* ===== Animasi reveal ===== */
 .rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
@@ -510,6 +539,10 @@ footer a:hover{color:#fff}
       </ul>
       <div class="mitra-cta rv">
         <a class="btn btn-accent" href="https://apps.antarkitaindonesia.com/mitra/" rel="noopener">Daftar jadi Mitra sekarang</a>
+        <a class="btn btn-ghost-light" href="https://wa.me/628117805600?text=Halo%20AntarKita%2C%20saya%20ingin%20daftar%20jadi%20mitra" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.7 7.1L4 20l1.4-4.2A8 8 0 1 1 20 11.5z"/><path d="M9 9.2c0 3.2 2.6 5.8 5.8 5.8l1.1-1.5-1.8-1-.9.8a4.2 4.2 0 0 1-2.5-2.5l.8-.9-1-1.8z"/></svg>
+          Tanya via WhatsApp
+        </a>
         <a class="btn btn-ghost-light" href="https://github.com/erzamadana-ui/antarkita/releases/latest" rel="noopener">Unduh APK Mitra</a>
       </div>
       <p class="mitra-req rv">Syarat: usia minimal 18 tahun, KTP, serta dokumen kendaraan atau usaha yang berlaku. Pendaftaran cepat dengan unggah SIM, STNK, KTP, dan foto kendaraan. Mitra adalah mitra usaha independen.</p>
@@ -629,8 +662,13 @@ footer a:hover{color:#fff}
         <p>Usia minimal 18 tahun, KTP, dan dokumen kendaraan atau usaha yang berlaku (SIM, STNK, foto kendaraan untuk driver; NPWP, izin usaha, atau sertifikat halal opsional untuk merchant). Daftar lewat aplikasi <a href="https://apps.antarkitaindonesia.com/mitra/" rel="noopener">AntarKita Mitra</a>; dokumen lengkap diverifikasi otomatis.</p>
       </details>
       <details class="rv">
-        <summary>Bagaimana cara menghapus akun atau menghubungi bantuan?<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <p>Akun bisa dihapus dari menu <strong>Akun → Lainnya → Hapus akun</strong> di aplikasi, atau lewat halaman <a href="https://apps.antarkitaindonesia.com/hapus-akun/" rel="noopener">permintaan hapus akun</a>. Untuk bantuan, buat tiket aduan di aplikasi atau kirim email ke <a href="mailto:erzamadana@gmail.com">erzamadana@gmail.com</a>.</p>
+        <summary>Bagaimana menghubungi CS?<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <!-- [ASUMSI] Jam layanan CS "Setiap hari 07.00–22.00 WIB" belum dikonfirmasi pemilik; ganti bila berbeda. -->
+        <p>Tiga jalur: <strong>WhatsApp</strong> ke <a href="https://wa.me/628117805600?text=Halo%20AntarKita" target="_blank" rel="noopener">0811-7805-600</a> (setiap hari 07.00–22.00 WIB), <strong>email</strong> ke <a href="mailto:erzamadana@gmail.com">erzamadana@gmail.com</a>, atau buat <strong>tiket aduan di aplikasi</strong> lewat menu Bantuan agar riwayat pesanan Anda langsung terlampir.</p>
+      </details>
+      <details class="rv">
+        <summary>Bagaimana cara menghapus akun?<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p>Akun bisa dihapus dari menu <strong>Akun → Lainnya → Hapus akun</strong> di aplikasi, atau lewat halaman <a href="https://apps.antarkitaindonesia.com/hapus-akun/" rel="noopener">permintaan hapus akun</a>. Bila ada kendala, hubungi CS lewat WhatsApp, email, atau tiket aduan di aplikasi.</p>
       </details>
     </div>
   </div>
@@ -705,11 +743,30 @@ footer a:hover{color:#fff}
         </ul>
       </div>
       <div>
-        <h4>Kontak</h4>
-        <ul>
-          <li><a href="mailto:erzamadana@gmail.com">erzamadana@gmail.com</a></li>
-          <li>Pekanbaru, Riau, Indonesia</li>
-          <li><a href="#faq">Pusat bantuan (FAQ)</a></li>
+        <h4>Hubungi kami</h4>
+        <ul class="foot-contact">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.7 7.1L4 20l1.4-4.2A8 8 0 1 1 20 11.5z"/><path d="M9 9.2c0 3.2 2.6 5.8 5.8 5.8l1.1-1.5-1.8-1-.9.8a4.2 4.2 0 0 1-2.5-2.5l.8-.9-1-1.8z"/></svg>
+            <span><span class="lbl">WhatsApp / CS</span><a href="https://wa.me/628117805600?text=Halo%20AntarKita" target="_blank" rel="noopener">0811-7805-600</a></span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <span><span class="lbl">Email</span><a href="mailto:erzamadana@gmail.com">erzamadana@gmail.com</a></span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <!-- [ASUMSI] kota belum dikonfirmasi pemilik — alamat ditampilkan persis seperti yang diberikan, tanpa kota/kode pos. -->
+            <span><span class="lbl">Alamat</span><address>Kahuripan Terrace VII-21</address></span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <!-- [ASUMSI] Jam layanan "Setiap hari 07.00–22.00 WIB" belum dikonfirmasi pemilik; ganti bila berbeda. -->
+            <span><span class="lbl">Jam layanan</span>Setiap hari 07.00–22.00 WIB</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7M12 17h.01"/></svg>
+            <span><a href="#faq">Pusat bantuan (FAQ)</a></span>
+          </li>
         </ul>
       </div>
     </div>
@@ -719,6 +776,12 @@ footer a:hover{color:#fff}
     </div>
   </div>
 </footer>
+
+<!-- Tombol WhatsApp mengambang (CS resmi 0811-7805-600) -->
+<a class="wa-fab" href="https://wa.me/628117805600?text=Halo%20AntarKita" target="_blank" rel="noopener" aria-label="Chat CS AntarKita di WhatsApp">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.7 7.1L4 20l1.4-4.2A8 8 0 1 1 20 11.5z"/><path d="M9 9.2c0 3.2 2.6 5.8 5.8 5.8l1.1-1.5-1.8-1-.9.8a4.2 4.2 0 0 1-2.5-2.5l.8-.9-1-1.8z"/></svg>
+  <span aria-hidden="true">Chat WhatsApp</span>
+</a>
 
 <script>
 (function(){
