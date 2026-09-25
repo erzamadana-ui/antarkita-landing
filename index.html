@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>AntarKita — Ojek, Makanan, Kirim &amp; Belanja dalam Satu Aplikasi</title>
-<meta name="description" content="AntarKita: super-app lokal untuk ojek, mobil, antar makanan, kirim barang, belanja pasar, mobil box &amp; travel antar kota — satu aplikasi, satu dompet AntarPay.">
+<meta name="description" content="AntarKita: super-app on-demand di Sumatra (Batam, Dumai, Padang, Pekanbaru) untuk ojek, mobil, antar makanan, kirim barang, belanja, mobil box &amp; travel antar kota. Rincian biaya tampil sebelum bayar, ongkir untuk driver.">
 <link rel="canonical" href="https://antarkitaindonesia.com/">
 <meta name="theme-color" content="#187A85">
 <meta name="robots" content="index,follow">
@@ -17,14 +17,14 @@
 <meta property="og:locale" content="id_ID">
 <meta property="og:url" content="https://antarkitaindonesia.com/">
 <meta property="og:title" content="AntarKita — Ojek, Makanan, Kirim &amp; Belanja dalam Satu Aplikasi">
-<meta property="og:description" content="Ojek, mobil, makanan, kirim barang, belanja pasar, mobil box, travel antar kota, dan AntarPay. Satu aplikasi, tarif transparan. Mulai dari Pekanbaru, Riau.">
+<meta property="og:description" content="Ojek, mobil, makanan, kirim barang, belanja, mobil box, dan travel antar kota dalam satu aplikasi. Rincian biaya tampil sebelum bayar. Aktif di Batam, Dumai, Padang, dan Pekanbaru.">
 <meta property="og:image" content="https://antarkitaindonesia.com/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Logo AntarKita dengan tagline Antar apa saja, ke mana saja">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AntarKita — Ojek, Makanan, Kirim &amp; Belanja dalam Satu Aplikasi">
-<meta name="twitter:description" content="Super-app lokal: ojek, makanan, kirim barang, belanja pasar, travel antar kota & AntarPay dalam satu aplikasi.">
+<meta name="twitter:description" content="Super-app on-demand di Sumatra: ojek, makanan, kirim barang, belanja, travel antar kota &amp; AntarPay. Rincian biaya tampil sebelum bayar.">
 <meta name="twitter:image" content="https://antarkitaindonesia.com/assets/og-image.jpg">
 
 <!-- Font -->
@@ -40,23 +40,31 @@
     {
       "@type": "Organization",
       "@id": "https://antarkitaindonesia.com/#org",
-      "name": "AntarKita Indonesia",
-      "alternateName": "AntarKita",
+      "name": "AntarKita",
+      "alternateName": "AntarKita Indonesia",
       "url": "https://antarkitaindonesia.com/",
       "logo": "https://antarkitaindonesia.com/assets/apple-touch-icon.png",
       "email": "erzamadana@gmail.com",
       "telephone": "+62-811-7805-600",
       "founder": { "@type": "Person", "name": "Erza Pradipta Madana" },
-      "areaServed": { "@type": "Place", "name": "Pekanbaru, Riau, Indonesia" },
+      "areaServed": [
+        { "@type": "City", "name": "Batam" },
+        { "@type": "City", "name": "Dumai" },
+        { "@type": "City", "name": "Padang" },
+        { "@type": "City", "name": "Pekanbaru" }
+      ],
       "address": { "@type": "PostalAddress", "streetAddress": "Kahuripan Terrace VII-21", "addressCountry": "ID" },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer service",
-        "telephone": "+62-811-7805-600",
-        "email": "erzamadana@gmail.com",
-        "url": "https://wa.me/628117805600",
-        "availableLanguage": "id"
-      }
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "+62-811-7805-600",
+          "url": "https://wa.me/628117805600",
+          "email": "erzamadana@gmail.com",
+          "areaServed": "ID",
+          "availableLanguage": ["id"]
+        }
+      ]
     },
     {
       "@type": "MobileApplication",
@@ -340,6 +348,72 @@ footer a:hover{color:#fff}
 @media (prefers-reduced-motion:reduce){.wa-fab,.wa-fab:hover{transition:none;transform:none}}
 @media print{.wa-fab{display:none}}
 
+/* ===== Mengapa AntarKita ===== */
+.why{background:var(--bg-soft);border-top:1px solid var(--border)}
+.why .safe{background:#fff}
+.why .safe .ic{background:var(--accent-light);color:#B45309}
+.city-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.city-list li{font-size:12.5px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--teal-light);color:var(--teal-deep)}
+.city-list li.soon{background:#F1F4F4;color:var(--faint);font-weight:600}
+
+/* ===== Transparansi biaya ===== */
+.fee{background:var(--bg-soft)}
+.fee .wrap{display:grid;gap:40px;align-items:start}
+@media (min-width:960px){.fee .wrap{grid-template-columns:1fr 1fr}}
+.fee-rules{display:grid;gap:12px;margin-top:26px}
+.fee-rules li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--ink)}
+.fee-rules .ic{flex:none;width:34px;height:34px;border-radius:10px;background:var(--teal-light);color:var(--teal);display:grid;place-items:center}
+.fee-rules .ic svg{width:18px;height:18px}
+.fee-rules span.t{color:var(--muted);display:block;font-size:14px;margin-top:2px}
+.receipt{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:22px;position:relative;min-width:0}
+.receipt .demo{position:absolute;top:18px;right:18px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:var(--accent);color:var(--ink);padding:4px 10px;border-radius:999px}
+.receipt h3{font-size:17px;padding-right:88px}
+.receipt .sub{font-size:13.5px;color:var(--muted);margin-top:2px}
+.receipt table{width:100%;border-collapse:collapse;margin-top:16px;font-size:14.5px}
+.receipt th,.receipt td{padding:10px 0;border-bottom:1px dashed var(--border);vertical-align:top;text-align:left;font-weight:400}
+.receipt td.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;padding-left:12px;font-weight:600}
+.receipt .who{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+.receipt .neg{color:#B42318}
+.receipt tr.total th,.receipt tr.total td{border-bottom:0;border-top:2px solid var(--ink);font-weight:800;font-size:16px;padding-top:12px}
+.flow{margin-top:18px;background:var(--bg-soft);border-radius:16px;padding:14px 16px}
+.flow h4{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-deep);margin-bottom:8px}
+.flow li{display:flex;justify-content:space-between;gap:12px;font-size:14px;padding:5px 0}
+.flow li span:last-child{text-align:right;color:var(--muted)}
+.fee-foot{margin-top:14px;font-size:13px;color:var(--muted)}
+
+/* ===== Manfaat 3 kolom ===== */
+.benefit3{display:grid;gap:16px;margin-top:40px}
+@media (min-width:900px){.benefit3{grid-template-columns:repeat(3,1fr);gap:20px}}
+.b3{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column}
+.b3 .ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;color:#fff}
+.b3 .ic svg{width:24px;height:24px}
+.b3 h3{font-size:19px;margin-top:14px}
+.b3 ul{margin-top:12px;display:grid;gap:9px;flex:1}
+.b3 li{display:flex;gap:9px;font-size:14.5px;color:var(--muted);line-height:1.5}
+.b3 li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-top:8px}
+.b3 .btn{margin-top:18px;align-self:flex-start}
+
+/* ===== Layanan: baris biaya ===== */
+.svc .fee-line{display:inline-block;margin-top:8px;font-size:12.5px;font-weight:600;color:var(--teal-deep);background:var(--teal-light);border-radius:8px;padding:3px 8px;line-height:1.4}
+
+/* ===== Peta ilustrasi (SVG) ===== */
+.step .shot svg{width:100%;height:100%;display:block;background:#EFEBE3}
+.demo-cap{margin-top:10px;font-size:12.5px;color:var(--faint);text-align:center}
+
+/* ===== Bantuan ===== */
+.help{background:var(--bg-soft)}
+.help .safe{background:#fff}
+.help .safe a.more{display:inline-block;margin-top:10px;font-weight:700}
+.code-chip{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px;background:var(--accent-light);color:#8A4B00;padding:1px 7px;border-radius:6px;white-space:nowrap}
+
+/* ===== CTA tambahan & penyelenggara ===== */
+.dl-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
+@media (max-width:420px){.dl-cta .btn,.b3 .btn{white-space:normal;width:100%}}
+.operator{border-top:1px solid rgba(255,255,255,.1);padding-block:18px;font-size:13px;color:rgba(255,255,255,.62);line-height:1.6}
+.operator strong{color:#fff;font-weight:700}
+.ph{background:rgba(245,165,36,.18);color:#FFD58A;padding:0 6px;border-radius:5px;font-weight:600}
+.ph-light{background:var(--accent-light);color:#8A4B00;padding:0 6px;border-radius:5px;font-weight:600}
+
 /* ===== Animasi reveal ===== */
 .rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
 .rv.in{opacity:1;transform:none}
@@ -358,7 +432,7 @@ footer a:hover{color:#fff}
     </a>
     <nav class="menu" aria-label="Navigasi utama">
       <a href="#layanan">Layanan</a>
-      <a href="#cara-kerja">Cara kerja</a>
+      <a href="#biaya">Biaya</a>
       <a href="#mitra">Mitra</a>
       <a href="#keamanan">Keamanan</a>
       <a href="#antarpay">AntarPay</a>
@@ -372,12 +446,15 @@ footer a:hover{color:#fff}
     </div>
   </div>
   <div class="mobile-menu" id="menu-mobile" data-open="false">
+    <a href="#mengapa">Mengapa AntarKita</a>
     <a href="#layanan">Layanan</a>
+    <a href="#biaya">Transparansi biaya</a>
     <a href="#cara-kerja">Cara kerja</a>
     <a href="#mitra">Untuk Mitra</a>
     <a href="#keamanan">Keamanan</a>
     <a href="#antarpay">AntarPay</a>
     <a href="#faq">FAQ</a>
+    <a href="#bantuan">Bantuan</a>
     <a class="btn btn-primary" href="https://apps.antarkitaindonesia.com/" rel="noopener">Buka aplikasi pelanggan</a>
     <a class="btn btn-outline" href="https://apps.antarkitaindonesia.com/mitra/" rel="noopener">Gabung jadi Mitra</a>
   </div>
@@ -389,10 +466,10 @@ footer a:hover{color:#fff}
 <section class="hero" aria-labelledby="judul-hero">
   <div class="wrap">
     <div class="hero-copy">
-      <!-- [ASUMSI] Wilayah: "mulai dari Pekanbaru, Riau" dan "hadir bertahap di kota-kota Sumatra" sesuai brief; tidak ada angka kota/pengguna. -->
-      <span class="pill"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>Mulai dari Pekanbaru, Riau · hadir bertahap di kota-kota Sumatra</span>
+      <!-- Kota aktif per 24 Sep 2026 (dari pemilik): Batam, Dumai, Padang, Pekanbaru. Kota lain "segera". Tidak ada angka pengguna/mitra. -->
+      <span class="pill"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>Aktif di Batam, Dumai, Padang &amp; Pekanbaru · kota lain di Sumatra segera</span>
       <h1 id="judul-hero">Antar apa saja, <em>ke mana saja.</em></h1>
-      <p class="lead">AntarKita adalah super-app lokal untuk kebutuhan harian Anda: pesan ojek dan mobil, antar makanan, kirim barang, belanja di toko dan pasar tradisional, sewa mobil box, sampai perjalanan antar kota — semua dalam satu aplikasi dengan satu dompet AntarPay.</p>
+      <p class="lead">AntarKita adalah super-app on-demand dari Sumatra untuk kebutuhan harian Anda: pesan ojek dan mobil, antar makanan, kirim barang, belanja di toko dan pasar tradisional, sewa mobil box, sampai perjalanan antar kota. Rincian biaya tampil sebelum Anda membayar, dan ongkir menjadi hak driver.</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="https://apps.antarkitaindonesia.com/" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
@@ -410,8 +487,9 @@ footer a:hover{color:#fff}
       </ul>
     </div>
     <div class="hero-visual" aria-hidden="true">
-      <div class="phone"><img src="assets/pelanggan-ride.webp" width="560" height="1212" alt="" fetchpriority="high"></div>
-      <div class="phone"><img src="assets/pelanggan-beranda.webp" width="560" height="1212" alt="" fetchpriority="high"></div>
+      <!-- Screenshot pelanggan-ride.webp tidak dipakai lagi di halaman: memuat label persentase penghematan dan jumlah driver (data tiruan) yang tidak dapat dibuktikan. -->
+      <div class="phone"><img src="assets/pelanggan-peta.webp" width="560" height="1212" alt="" fetchpriority="high" decoding="async"></div>
+      <div class="phone"><img src="assets/pelanggan-beranda.webp" width="560" height="1212" alt="" fetchpriority="high" decoding="async"></div>
     </div>
   </div>
 </section>
@@ -422,50 +500,187 @@ footer a:hover{color:#fff}
   </div>
 </div>
 
+<!-- ===== MENGAPA ANTARKITA ===== -->
+<section class="section why" id="mengapa" aria-labelledby="judul-mengapa">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Mengapa AntarKita</span>
+      <h2 class="h2" id="judul-mengapa">Jelas biayanya, adil untuk mitranya</h2>
+      <p class="lead">Kami tidak menjanjikan harga atau waktu tertentu. Yang kami janjikan adalah cara kerja yang bisa Anda periksa sendiri di setiap pesanan.</p>
+    </div>
+    <div class="safe-grid">
+      <article class="safe rv">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span>
+        <h3>Rincian biaya sebelum bayar</h3>
+        <p>Nilai barang, ongkir, biaya platform, biaya metode pembayaran, promo beserta penanggungnya, dan total tampil terpisah sebelum Anda menekan konfirmasi. Tidak ada biaya tersembunyi.</p>
+      </article>
+      <article class="safe rv">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5.5" cy="17" r="3"/><circle cx="18.5" cy="17" r="3"/><path d="M5.5 17 9 9h4l3 5h2.5M13 9l2-3h3"/></svg></span>
+        <h3>Ongkir untuk driver</h3>
+        <p>Ongkir AntarFood, AntarSend, AntarShop, dan AntarMarket 100&nbsp;% menjadi hak driver. Untuk penumpang, komisi platform maksimal 8&nbsp;% (motor) dan 15&nbsp;% (mobil) dari tarif; untuk AntarBox maksimal 10&nbsp;%.</p>
+      </article>
+      <article class="safe rv">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg></span>
+        <h3>Iklan selalu berlabel</h3>
+        <p>Merchant yang membayar promosi tampil dengan label <strong>Sponsored</strong> di tempat yang terpisah. Iklan tidak disamarkan sebagai hasil pencarian atau urutan biasa.</p>
+      </article>
+      <article class="safe rv">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+        <h3>Dari kota-kota Sumatra</h3>
+        <p>Dibangun dan dioperasikan untuk kota di Sumatra. Kota yang sudah aktif:</p>
+        <ul class="city-list" aria-label="Kota aktif">
+          <li>Batam</li><li>Dumai</li><li>Padang</li><li>Pekanbaru</li><li class="soon">Kota lain segera</li>
+        </ul>
+      </article>
+      <article class="safe rv">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.7 7.1L4 20l1.4-4.2A8 8 0 1 1 20 11.5z"/><path d="M9 9.2c0 3.2 2.6 5.8 5.8 5.8l1.1-1.5-1.8-1-.9.8a4.2 4.2 0 0 1-2.5-2.5l.8-.9-1-1.8z"/></svg></span>
+        <h3>CS lewat WhatsApp</h3>
+        <p>Hubungi CS di <a href="https://wa.me/628117805600?text=Halo%20AntarKita" target="_blank" rel="noopener">0811-7805-600</a>. Sebutkan kode bantuan <span class="code-chip">AK-xxxxxx</span> dari rincian pembayaran agar pesanan Anda cepat ditemukan.</p>
+      </article>
+      <article class="safe rv">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <h3>Keamanan bawaan</h3>
+        <p>SOS, bagikan perjalanan, chat dan telepon tanpa membuka nomor HP, serta PIN serah terima tersedia di aplikasi pelanggan maupun mitra.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- ===== LAYANAN ===== -->
 <section class="section" id="layanan" aria-labelledby="judul-layanan">
   <div class="wrap">
     <div class="rv">
       <span class="eyebrow">Layanan</span>
-      <h2 class="h2" id="judul-layanan">Semua layanan dalam satu aplikasi</h2>
-      <p class="lead">Sembilan layanan untuk kebutuhan harian, dari jalan ke kantor sampai belanja sayur di pasar — dibayar dari satu dompet.</p>
+      <h2 class="h2" id="judul-layanan">Tujuh layanan dalam satu aplikasi</h2>
+      <p class="lead">Perjalanan, makanan, kiriman, belanja, angkutan barang, dan travel antar kota — dibayar tunai atau nontunai, dengan rincian biaya yang sama jelasnya untuk setiap layanan.</p>
     </div>
     <div class="services">
       <article class="svc rv">
         <div class="ic c-ride"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5.5" cy="17" r="3"/><circle cx="18.5" cy="17" r="3"/><path d="M5.5 17 9 9h4l3 5h2.5M13 9l2-3h3M9 9H6.5"/></svg></div>
-        <div><h3>AntarRide</h3><p>Ojek motor cepat dan hemat untuk perjalanan dalam kota. Tarif jelas sebelum pesan.</p></div>
+        <div><h3>AntarRide</h3><p>Ojek motor untuk perjalanan dalam kota. Pilih kelas kendaraan, lihat tarif dan rincian biaya sebelum memesan, atau jadwalkan untuk nanti.</p><span class="fee-line">Driver menerima ≥ 92&nbsp;% tarif</span></div>
       </article>
       <article class="svc rv">
         <div class="ic c-car"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13l2-5.5A2 2 0 0 1 6.9 6h10.2a2 2 0 0 1 1.9 1.5L21 13v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-5z"/><path d="M3 13h18M7 16h.01M17 16h.01"/></svg></div>
-        <div><h3>AntarCar</h3><p>Mobil untuk perjalanan nyaman bersama keluarga atau bawaan banyak.</p></div>
+        <div><h3>AntarCar</h3><p>Mobil untuk perjalanan bersama keluarga atau dengan bawaan. Bagian dari layanan perjalanan bersama AntarRide.</p><span class="fee-line">Driver menerima ≥ 85&nbsp;% tarif</span></div>
       </article>
       <article class="svc rv">
         <div class="ic c-food"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15h16a8 8 0 0 0-16 0z"/><path d="M2 19h20M12 7V5"/></svg></div>
-        <div><h3>AntarFood</h3><p>Pesan makanan dari warung, restoran, dan UMKM favorit di sekitar Anda; lacak pesanan sampai tiba.</p></div>
+        <div><h3>AntarFood</h3><p>Pesan makanan dari warung, restoran, dan UMKM di sekitar Anda, lalu lacak sampai tiba. Merchant yang beriklan selalu berlabel Sponsored.</p><span class="fee-line">Ongkir 100&nbsp;% untuk driver</span></div>
       </article>
       <article class="svc rv">
         <div class="ic c-send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3 10 14"/><path d="M21 3 14 21l-4-7-7-4z"/></svg></div>
-        <div><h3>AntarSend</h3><p>Kirim dokumen dan paket dalam kota, ada foto bukti pengiriman dan PIN serah terima.</p></div>
+        <div><h3>AntarSend</h3><p>Kirim dokumen dan paket dalam kota, dengan foto bukti pengiriman dan PIN serah terima.</p><span class="fee-line">Ongkir 100&nbsp;% untuk driver</span></div>
       </article>
       <article class="svc rv">
         <div class="ic c-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg></div>
-        <div><h3>AntarBox</h3><p>Mobil box untuk pindahan, angkut barang besar, atau kirim stok usaha.</p></div>
+        <div><h3>AntarBox</h3><p>Mobil box untuk pindahan, angkut barang besar, atau kirim stok usaha.</p><span class="fee-line">Mitra box menerima ≥ 90<span class="fee-line">Ongkir 100&nbsp;% untuk mitra box</span>nbsp;% tarif</span></div>
       </article>
       <article class="svc rv">
         <div class="ic c-shop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l1 13H5z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg></div>
-        <div><h3>AntarShop</h3><p>Titip beli di toko: tulis daftar belanja, mitra membelikan dan mengantar.</p></div>
+        <div><h3>AntarShop</h3><p>Titip beli di toko: tulis daftar belanja, driver membelikan dan mengantar. Selisih harga belanja aktual dicatat di rincian pesanan.</p><span class="fee-line">Ongkir 100&nbsp;% untuk driver</span></div>
       </article>
       <article class="svc rv">
         <div class="ic c-market"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10l1.5-5h15L21 10"/><path d="M3 10a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/><path d="M5 12v8h14v-8M10 20v-5h4v5"/></svg></div>
-        <div><h3>AntarMarket</h3><p>Belanja sayur, buah, daging, ikan, dan sembako langsung dari pedagang pasar tradisional dengan harga pasar hari itu.</p></div>
+        <div><h3>AntarMarket</h3><p>Belanja sayur, buah, daging, ikan, dan sembako dari pedagang pasar tradisional dengan harga pasar hari itu.</p><span class="fee-line">Ongkir 100&nbsp;% untuk driver</span></div>
       </article>
       <article class="svc rv">
         <div class="ic c-travel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16V7a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v9"/><path d="M4 11h16M4 16h16v2H4zM7 21v-3M17 21v-3"/></svg></div>
-        <div><h3>AntarTravel</h3><p>Perjalanan antar kota dengan mitra travel terverifikasi: pilih jadwal, kursi, atau sewa privat satu mobil.</p></div>
+        <div><h3>AntarTravel</h3><p>Perjalanan antar kota dengan mitra travel terverifikasi: pilih jadwal dan kursi, atau sewa privat satu mobil.</p><span class="fee-line">Biaya platform tampil terpisah saat booking</span></div>
       </article>
       <article class="svc rv">
         <div class="ic c-pay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M16 15h2"/></svg></div>
-        <div><h3>AntarPay</h3><p>Dompet dalam aplikasi untuk membayar semua layanan tanpa uang tunai. Top-up lewat transfer bank, e-wallet, dan QRIS.</p></div>
+        <div><h3>AntarPay</h3><p>Saldo dalam aplikasi untuk membayar layanan AntarKita dan menampung pendapatan mitra. Bukan layanan tersendiri, melainkan cara bayar.</p><span class="fee-line">Saldo pelanggan hanya untuk transaksi</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRANSPARANSI BIAYA ===== -->
+<section class="section fee" id="biaya" aria-labelledby="judul-biaya">
+  <div class="wrap">
+    <div>
+      <div class="rv">
+        <span class="eyebrow">Transparansi biaya</span>
+        <h2 class="h2" id="judul-biaya">Setiap rupiah punya baris sendiri</h2>
+        <p class="lead">Sebelum Anda membayar, aplikasi menampilkan setiap komponen biaya secara terpisah beserta pihak yang menerimanya. Angka final selalu yang tertera di layar konfirmasi Anda.</p>
+      </div>
+      <ul class="fee-rules">
+        <li class="rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5.5" cy="17" r="3"/><circle cx="18.5" cy="17" r="3"/><path d="M5.5 17 9 9h4l3 5h2.5"/></svg></span><span><strong>Ongkir → driver.</strong><span class="t">100&nbsp;% untuk antar makanan, kiriman, belanja, dan mobil box. Penumpang motor: komisi maksimal 8&nbsp;%; mobil: maksimal 15&nbsp;%.</span></span></li>
+        <li class="rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1.5-4h15L21 9"/><path d="M5 11v9h14v-9"/></svg></span><span><strong>Nilai barang → merchant.</strong><span class="t">Harga menu atau barang ditentukan merchant. AntarKita memungut fee merchant sesuai kontrak kemitraan, bukan dari ongkir driver.</span></span></li>
+        <li class="rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M17 7H9.5a2.5 2.5 0 0 0 0 5h5a2.5 2.5 0 0 1 0 5H7"/></svg></span><span><strong>Biaya platform → AntarKita.</strong><span class="t">Nominal per pesanan, ditampilkan terpisah. Inilah salah satu sumber pendapatan kami, selain fee merchant dan iklan berlabel Sponsored.</span></span></li>
+        <li class="rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg></span><span><strong>Biaya metode pembayaran.</strong><span class="t">Ditampilkan terpisah dan ditanggung AntarKita, kecuali dinyatakan sebelum Anda menekan konfirmasi. Pembayaran nontunai diproses mitra pembayaran berizin.</span></span></li>
+        <li class="rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12 12 20l-8-8V4h8z"/><circle cx="8" cy="8" r="1.5"/></svg></span><span><strong>Promo &amp; penanggungnya.</strong><span class="t">Setiap diskon menyebut siapa yang menanggung (AntarKita, merchant, atau pengiklan). Promo tidak mengurangi ongkir yang diterima driver.</span></span></li>
+      </ul>
+    </div>
+    <div class="receipt rv" role="group" aria-labelledby="judul-contoh">
+      <span class="demo">Contoh</span>
+      <h3 id="judul-contoh">Contoh rincian checkout AntarFood</h3>
+      <p class="sub">Angka ilustratif untuk menjelaskan susunan rincian, bukan tarif resmi. Nominal sebenarnya berbeda per kota, jarak, dan merchant.</p>
+      <table>
+        <caption class="sr">Contoh rincian biaya pesanan AntarFood dengan angka ilustratif</caption>
+        <tbody>
+          <tr><th scope="row">Nilai barang (2 menu)<span class="who">ke merchant</span></th><td class="n">Rp50.000</td></tr>
+          <tr><th scope="row">Ongkir<span class="who">100&nbsp;% ke driver</span></th><td class="n">Rp8.000</td></tr>
+          <tr><th scope="row">Biaya platform AntarKita<span class="who">ke AntarKita</span></th><td class="n">Rp2.000</td></tr>
+          <tr><th scope="row">Biaya metode pembayaran (e-wallet)<span class="who">ditanggung AntarKita</span></th><td class="n">Rp0</td></tr>
+          <tr><th scope="row">Promo menu<span class="who">ditanggung merchant</span></th><td class="n neg">−Rp5.000</td></tr>
+          <tr class="total"><th scope="row">Total dibayar</th><td class="n">Rp55.000</td></tr>
+        </tbody>
+      </table>
+      <div class="flow">
+        <h4>Ke mana uangnya (contoh)</h4>
+        <ul>
+          <li><span>Driver</span><span>Rp8.000 — ongkir utuh</span></li>
+          <li><span>Merchant</span><span>Rp45.000 dikurangi fee merchant sesuai kontrak</span></li>
+          <li><span>AntarKita</span><span>Rp2.000 biaya platform + fee merchant</span></li>
+        </ul>
+      </div>
+      <p class="fee-foot">Bila biaya metode pembayaran dibebankan kepada Anda, nominalnya tampil sebagai baris tersendiri sebelum konfirmasi. Rincian yang sama tersimpan di riwayat pesanan beserta kode bantuan <span class="code-chip">AK-xxxxxx</span>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MANFAAT ===== -->
+<section class="section" id="manfaat" aria-labelledby="judul-manfaat">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Manfaat</span>
+      <h2 class="h2" id="judul-manfaat">Untuk pelanggan, driver, dan merchant</h2>
+      <p class="lead">Satu platform, tiga pihak. Aturan pembagiannya tertulis dan bisa dicek di aplikasi masing-masing.</p>
+    </div>
+    <div class="benefit3">
+      <article class="b3 rv">
+        <span class="ic c-ride"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
+        <h3>Pelanggan</h3>
+        <ul>
+          <li>Rincian biaya lengkap sebelum bayar, termasuk siapa penanggung promo.</li>
+          <li>Bayar tunai ke mitra atau nontunai lewat mitra pembayaran berizin.</li>
+          <li>Pembatalan dan pengembalian dana mengikuti tahap pesanan; kebijakannya tertulis di Syarat &amp; Ketentuan.</li>
+          <li>Laporkan selisih atau masalah dengan kode bantuan AK-xxxxxx.</li>
+        </ul>
+        <a class="btn btn-primary btn-sm" href="https://apps.antarkitaindonesia.com/" rel="noopener">Buka aplikasi pelanggan</a>
+      </article>
+      <article class="b3 rv">
+        <span class="ic c-market"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5.5" cy="17" r="3"/><circle cx="18.5" cy="17" r="3"/><path d="M5.5 17 9 9h4l3 5h2.5M13 9l2-3h3"/></svg></span>
+        <h3>Driver</h3>
+        <ul>
+          <li>Ongkir 100&nbsp;% untuk antar makanan, kiriman, belanja, dan mobil box.</li>
+          <li>Penumpang: komisi platform maksimal 8&nbsp;% (motor) dan 15&nbsp;% (mobil).</li>
+          <li>Pendapatan tampil sebelum menerima pesanan; saldo pendapatan dapat dicairkan ke rekening atas nama sendiri.</li>
+          <li>Jadwal bebas: online dan offline kapan saja.</li>
+        </ul>
+        <a class="btn btn-accent btn-sm" href="https://apps.antarkitaindonesia.com/mitra/" rel="noopener">Daftar jadi driver</a>
+      </article>
+      <article class="b3 rv">
+        <span class="ic c-food"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1.5-4h15L21 9"/><path d="M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/><path d="M5 11v9h14v-9"/></svg></span>
+        <h3>Merchant</h3>
+        <ul>
+          <li>Fee merchant sesuai kontrak, tertulis sebelum bergabung.</li>
+          <li>Kelola menu, stok, jam buka, dan pesanan dari aplikasi Mitra.</li>
+          <li>Iklan opsional (merchant, menu, pencarian, banner, radius, voucher) dengan anggaran sendiri, selalu berlabel Sponsored, dan laporan impresi serta klik.</li>
+          <li>Iklan bisa dihentikan; sisa anggaran kembali ke saldo merchant.</li>
+        </ul>
+        <a class="btn btn-outline btn-sm" href="https://apps.antarkitaindonesia.com/mitra/" rel="noopener">Daftar jadi merchant</a>
       </article>
     </div>
   </div>
@@ -484,22 +699,77 @@ footer a:hover{color:#fff}
         <span class="num" aria-hidden="true">1</span>
         <h3>Pilih layanan &amp; titik</h3>
         <p>Pilih layanan, tentukan titik jemput atau antar di peta, atau pilih menu dan lapak.</p>
-        <div class="shot"><img src="assets/pelanggan-peta.webp" width="560" height="1212" loading="lazy" alt="Layar memilih titik jemput di peta dengan tombol Pilih lokasi ini"></div>
+        <div class="shot"><img src="assets/pelanggan-peta.webp" width="560" height="1212" loading="lazy" decoding="async" alt="Layar memilih titik jemput di peta dengan tombol Pilih lokasi ini"></div>
       </li>
       <li class="step rv">
         <span class="num" aria-hidden="true">2</span>
-        <h3>Cek estimasi, pilih bayar</h3>
-        <p>Lihat estimasi total termasuk biaya layanan, pilih tunai atau AntarPay, lalu pesan.</p>
-        <div class="shot"><img src="assets/pelanggan-ride.webp" width="560" height="1212" loading="lazy" alt="Layar AntarRide dengan pilihan kelas kendaraan dan estimasi tarif"></div>
+        <h3>Cek rincian, pilih bayar</h3>
+        <p>Periksa rincian biaya per komponen dan totalnya, pilih tunai atau nontunai, lalu konfirmasi.</p>
+        <div class="shot"><img src="assets/pelanggan-pay.webp" width="560" height="1212" loading="lazy" decoding="async" alt="Layar Pembayaran dengan pilihan metode: tunai, saldo AntarPay, atau e-wallet"></div>
       </li>
       <li class="step rv">
         <span class="num" aria-hidden="true">3</span>
         <h3>Pantau &amp; beri nilai</h3>
         <p>Pantau mitra di peta secara real-time, chat bila perlu, dan beri penilaian setelah selesai.</p>
-        <div class="shot"><img src="assets/pelanggan-lacak.webp" width="560" height="1212" loading="lazy" alt="Layar pelacakan mitra di peta dengan status pesanan"></div>
+        <!-- Peta ilustrasi SVG inline menggantikan pelanggan-lacak.webp: pada screenshot itu garis rute terputus (keluar layar dan tidak tersambung ke posisi driver). -->
+        <div class="shot"><svg viewBox="0 0 412 700" role="img" aria-labelledby="peta-t peta-d" preserveAspectRatio="xMidYMid slice">
+            <title id="peta-t">Ilustrasi layar pelacakan pesanan</title>
+            <desc id="peta-d">Peta ilustratif: rute dari posisi driver menuju titik jemput, dengan kartu status "Driver menuju titik jemput". Data contoh.</desc>
+            <rect width="412" height="700" fill="#EFEBE3"/>
+            <rect x="10" y="12" width="56" height="44" rx="3" fill="#F8F5EF" stroke="#E2DBCF"/>
+            <rect x="10" y="112" width="56" height="44" rx="3" fill="#F8F5EF" stroke="#E2DBCF"/>
+            <rect x="28" y="182" width="50" height="44" rx="3" fill="#F8F5EF" stroke="#E2DBCF"/>
+            <rect x="10" y="272" width="56" height="44" rx="3" fill="#F8F5EF" stroke="#E2DBCF"/>
+            <rect x="28" y="352" width="50" height="44" rx="3" fill="#F8F5EF" stroke="#E2DBCF"/>
+            <rect x="10" y="442" width="56" height="44" rx="3" fill="#F8F5EF" stroke="#E2DBCF"/>
+            <rect x="28" y="512" width="50" height="44" rx="3" fill="#F8F5EF" stroke="#E2DBCF"/>
+            <rect x="120" y="12" width="56" height="44" rx="3" fill="#F8F5EF" stroke="#E2DBCF"/>
+            <rect x="118" y="108" width="94" height="124" rx="8" fill="#CFE6C4"/>
+            <rect x="120" y="272" width="56" height="44" rx="3" fill="#F8F5EF" stroke="#E2DBCF"/>
+            <rect x="158" y="352" width="50" height="44" rx="3" fill="#F8F5EF" stroke="#E2DBCF"/>
+            <rect x="120" y="442" width="56" height="44" rx="3" fill="#F8F5EF" stroke="#E2DBCF"/>
+            <rect x="158" y="512" width="50" height="44" rx="3" fill="#F8F5EF" stroke="#E2DBCF"/>
+            <rect x="250" y="12" width="56" height="44" rx="3" fill="#F8F5EF" stroke="#E2DBCF"/>
+            <rect x="250" y="112" width="56" height="44" rx="3" fill="#F8F5EF" stroke="#E2DBCF"/>
+            <rect x="278" y="182" width="50" height="44" rx="3" fill="#F8F5EF" stroke="#E2DBCF"/>
+            <rect x="250" y="272" width="56" height="44" rx="3" fill="#F8F5EF" stroke="#E2DBCF"/>
+            <rect x="278" y="352" width="50" height="44" rx="3" fill="#F8F5EF" stroke="#E2DBCF"/>
+            <rect x="250" y="442" width="56" height="44" rx="3" fill="#F8F5EF" stroke="#E2DBCF"/>
+            <rect x="278" y="512" width="50" height="44" rx="3" fill="#F8F5EF" stroke="#E2DBCF"/>
+            <rect x="370" y="12" width="32" height="44" rx="3" fill="#F8F5EF" stroke="#E2DBCF"/>
+            <rect x="370" y="112" width="32" height="44" rx="3" fill="#F8F5EF" stroke="#E2DBCF"/>
+            <rect x="370" y="272" width="32" height="44" rx="3" fill="#F8F5EF" stroke="#E2DBCF"/>
+            <rect x="370" y="442" width="32" height="44" rx="3" fill="#F8F5EF" stroke="#E2DBCF"/>
+            <g stroke="#FFFFFF" stroke-width="12" fill="none">
+              <path d="M100 0V700M350 0V700M0 90H412M0 420H412M0 580H412"/>
+            </g>
+            <g stroke="#F6DE93" stroke-width="16" fill="none">
+              <path d="M230 0V700M0 250H412"/>
+            </g>
+            <path d="M350 120V250H230V420H150" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M350 120V250H230V420H150" fill="none" stroke="#187A85" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <g transform="translate(150 420)">
+              <circle r="15" fill="#187A85" stroke="#FFFFFF" stroke-width="4"/>
+              <circle r="5" fill="#FFFFFF"/>
+              <rect x="-44" y="20" width="88" height="24" rx="12" fill="#FFFFFF" stroke="#E6ECEC"/>
+              <text y="37" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="700" fill="#101F21">Titik jemput</text>
+            </g>
+            <g transform="translate(350 120)">
+              <circle r="17" fill="#2F80ED" stroke="#FFFFFF" stroke-width="4"/>
+              <path d="M-8 3l3-7h10l3 7v4h-16z" fill="#FFFFFF"/>
+            </g>
+            <rect x="14" y="14" width="210" height="34" rx="17" fill="#FFFFFF" stroke="#E6ECEC"/>
+            <text x="119" y="36" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="700" fill="#1B474C">Driver menuju titik jemput</text>
+            <rect x="0" y="560" width="412" height="160" rx="24" fill="#FFFFFF"/>
+            <rect x="186" y="572" width="40" height="5" rx="3" fill="#D5DDDD"/>
+            <text x="24" y="612" font-family="Inter,system-ui,sans-serif" font-size="19" font-weight="800" fill="#101F21">Driver menuju lokasi</text>
+            <text x="24" y="636" font-family="Inter,system-ui,sans-serif" font-size="13.5" fill="#5C6B6D">AntarRide · data contoh</text>
+            <rect x="24" y="656" width="364" height="6" rx="3" fill="#E6ECEC"/>
+            <rect x="24" y="656" width="130" height="6" rx="3" fill="#2F80ED"/>
+          </svg></div>
       </li>
     </ol>
-    <p class="how-foot">Alamat rumah dan kantor tersimpan, riwayat pesanan siap dipesan ulang, dan promo untuk pengguna setia.</p>
+    <p class="how-foot">Alamat rumah dan kantor tersimpan, dan riwayat pesanan siap dipesan ulang. Tampilan layar di halaman ini adalah ilustrasi dengan data contoh; tampilan di aplikasi dapat berbeda.</p>
   </div>
 </section>
 
@@ -532,9 +802,10 @@ footer a:hover{color:#fff}
       </div>
       <ul class="benefits">
         <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Jadwal fleksibel.</strong> Nyalakan status Online kapan pun Anda siap, matikan kapan pun ingin istirahat.</span></li>
-        <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Pendapatan bersih tampil sebelum menerima.</strong> Komisi platform tercantum transparan di setiap pesanan.</span></li>
-        <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Cairkan ke rekening bank kapan saja</strong> sesuai batas minimum; pendapatan masuk otomatis ke saldo setelah pesanan selesai.</span></li>
-        <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Terlindungi dari sengketa</strong> dengan PIN serah terima dan foto bukti pengiriman.</span></li>
+        <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Ongkir untuk Anda.</strong> 100&nbsp;% ongkir antar makanan, kiriman, belanja, dan mobil box menjadi hak driver; penumpang motor dikenai komisi maksimal 8&nbsp;% dan mobil maksimal 15&nbsp;%. Pendapatan tampil sebelum Anda menerima pesanan.</span></li>
+        <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Cairkan ke rekening bank atas nama sendiri</strong> sesuai jadwal dan batas minimum yang berlaku; pendapatan masuk ke saldo setelah pesanan selesai.</span></li>
+        <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Bukti bila terjadi sengketa.</strong> PIN serah terima, foto bukti pengiriman, dan laporan selisih pembayaran atau pencairan langsung dari aplikasi.</span></li>
+        <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Untuk merchant: iklan opsional berlabel Sponsored.</strong> Tentukan anggaran dan durasi sendiri, pantau impresi dan klik, hentikan kapan pun — sisa anggaran kembali ke saldo.</span></li>
         <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Mode ganda.</strong> Satu akun bisa jadi driver sekaligus merchant atau pedagang — beralih dengan satu ketukan.</span></li>
       </ul>
       <div class="mitra-cta rv">
@@ -545,11 +816,11 @@ footer a:hover{color:#fff}
         </a>
         <a class="btn btn-ghost-light" href="https://github.com/erzamadana-ui/antarkita/releases/latest" rel="noopener">Unduh APK Mitra</a>
       </div>
-      <p class="mitra-req rv">Syarat: usia minimal 18 tahun, KTP, serta dokumen kendaraan atau usaha yang berlaku. Pendaftaran cepat dengan unggah SIM, STNK, KTP, dan foto kendaraan. Mitra adalah mitra usaha independen.</p>
+      <p class="mitra-req rv">Syarat: usia minimal 18 tahun, KTP, serta dokumen kendaraan atau usaha yang berlaku. Pendaftaran lewat aplikasi dengan unggah SIM, STNK, KTP, dan foto kendaraan. Mitra adalah mitra usaha independen.</p>
     </div>
     <div class="mitra-visual" aria-hidden="true">
-      <div class="phone"><img src="assets/mitra-beranda.webp" width="560" height="1212" loading="lazy" alt=""></div>
-      <div class="phone"><img src="assets/mitra-order.webp" width="560" height="1212" loading="lazy" alt=""></div>
+      <div class="phone"><img src="assets/mitra-beranda.webp" width="560" height="1212" loading="lazy" decoding="async" alt=""></div>
+      <div class="phone"><img src="assets/mitra-order.webp" width="560" height="1212" loading="lazy" decoding="async" alt=""></div>
     </div>
   </div>
 </section>
@@ -565,8 +836,8 @@ footer a:hover{color:#fff}
     <div class="safe-grid">
       <article class="safe rv">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16l-1.5 4H5.5zM6 11v6M18 11v6M3 17h18"/><path d="M8 4h8"/></svg></span>
-        <h3>Tarif jelas sebelum pesan</h3>
-        <p>Estimasi total tampil di muka, termasuk biaya layanan. Tidak ada kejutan di akhir perjalanan.</p>
+        <h3>Rincian biaya sebelum pesan</h3>
+        <p>Ongkir, biaya platform, biaya metode pembayaran, dan promo tampil terpisah sebelum konfirmasi. Perubahan (tujuan baru, waktu tunggu, parkir/tol, selisih belanja) dicatat di rincian pesanan.</p>
       </article>
       <article class="safe rv">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M9 11h6M9 14h4"/></svg></span>
@@ -586,12 +857,12 @@ footer a:hover{color:#fff}
       <article class="safe rv">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/><path d="M15 12l2 2 4-4"/></svg></span>
         <h3>Mitra terverifikasi</h3>
-        <p>Foto, nama, dan plat nomor mitra tampil sebelum jemput. Dokumen mitra diperiksa saat pendaftaran, ditambah verifikasi wajah.</p>
+        <p>Foto, nama, dan plat nomor mitra tampil sebelum jemput. Dokumen mitra diperiksa saat pendaftaran, dan verifikasi wajah dapat diminta sewaktu-waktu.</p>
       </article>
       <article class="safe rv">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 15v2"/></svg></span>
         <h3>PIN serah terima &amp; bukti foto</h3>
-        <p>Paket dan belanjaan diserahkan dengan PIN dan foto bukti, ditambah tiket aduan ke CS bila ada masalah. Laporkan atau blokir pengguna langsung dari aplikasi.</p>
+        <p>Paket dan belanjaan diserahkan dengan PIN dan foto bukti. Bila ada masalah atau selisih pembayaran, laporkan dari aplikasi dengan kode bantuan <span class="code-chip">AK-xxxxxx</span>. Laporkan atau blokir pengguna langsung dari aplikasi.</p>
       </article>
     </div>
   </div>
@@ -601,18 +872,18 @@ footer a:hover{color:#fff}
 <section class="section pay" id="antarpay" aria-labelledby="judul-pay">
   <div class="wrap">
     <div class="pay-visual rv" aria-hidden="true">
-      <div class="phone phone-lg"><img src="assets/pelanggan-pay.webp" width="560" height="1212" loading="lazy" alt=""></div>
+      <div class="phone phone-lg"><img src="assets/pelanggan-pay.webp" width="560" height="1212" loading="lazy" decoding="async" alt=""></div>
     </div>
     <div>
       <div class="rv">
         <span class="eyebrow">AntarPay</span>
         <h2 class="h2" id="judul-pay">Satu dompet untuk semua layanan</h2>
-        <p class="lead">Bayar ojek, makanan, paket, belanja pasar, sampai tiket travel tanpa uang tunai. Atau tetap bayar tunai — Anda yang pilih.</p>
+        <p class="lead">Bayar ojek, makanan, paket, belanja pasar, sampai tiket travel tanpa uang tunai. Atau tetap bayar tunai kepada mitra — Anda yang pilih.</p>
       </div>
       <ul class="pay-list">
         <li class="rv">
           <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
-          <div><strong>Top-up mudah</strong><span>Transfer bank, e-wallet (GoPay, OVO, DANA, ShopeePay), QRIS, dan virtual account — diproses Midtrans.</span></div>
+          <div><strong>Nontunai lewat mitra pembayaran berizin</strong><span>Transfer bank/virtual account, e-wallet, dan QRIS. Metode yang tersedia dan biayanya (bila ada) tampil di aplikasi sebelum Anda membayar.</span></div>
         </li>
         <li class="rv">
           <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg></span>
@@ -620,11 +891,11 @@ footer a:hover{color:#fff}
         </li>
         <li class="rv">
           <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></span>
-          <div><strong>Saldo tertutup, tidak menyimpan data kartu</strong><span>AntarPay hanya berlaku di dalam AntarKita. Pembayaran nontunai diproses oleh Midtrans, penyelenggara payment gateway berizin Bank Indonesia.</span></div>
+          <div><strong>Saldo tertutup, tidak menyimpan data kartu</strong><span>AntarPay hanya berlaku di dalam AntarKita. Saldo pelanggan hanya dipakai untuk bertransaksi dan tidak dapat ditarik ke rekening bank. AntarKita tidak menyimpan nomor kartu atau kredensial e-wallet Anda.</span></div>
         </li>
         <li class="rv">
           <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg></span>
-          <div><strong>Untuk mitra: pendapatan masuk otomatis</strong><span>Saldo bertambah setelah pesanan selesai dan bisa dicairkan ke rekening bank.</span></div>
+          <div><strong>Untuk mitra: pendapatan dapat dicairkan</strong><span>Saldo bertambah setelah pesanan selesai dan dapat dicairkan ke rekening bank atas nama sendiri.</span></div>
         </li>
       </ul>
       <p class="pay-note">AntarPay bukan uang elektronik berizin dan tidak dapat ditransfer antar pengguna; AntarKita tidak memberikan pinjaman dan tidak menawarkan produk investasi.</p>
@@ -642,8 +913,8 @@ footer a:hover{color:#fff}
     <div class="faq-list">
       <details class="rv">
         <summary>Di mana AntarKita sudah bisa dipakai?<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <!-- [ASUMSI] Cakupan wilayah mengikuti brief; perbarui saat kota baru resmi dibuka. -->
-        <p>AntarKita dimulai dari Pekanbaru, Riau, dan hadir bertahap di kota-kota Sumatra. Buka aplikasi dan izinkan lokasi — bila layanan sudah tersedia di sekitar Anda, mitra terdekat akan tampil di peta.</p>
+        <!-- Kota aktif per 24 Sep 2026 (konfirmasi pemilik). Perbarui saat kota baru resmi dibuka. -->
+        <p>Saat ini AntarKita aktif di <strong>Batam, Dumai, Padang, dan Pekanbaru</strong>. Kota lain di Sumatra menyusul. Ketersediaan tiap layanan dapat berbeda per kota; buka aplikasi dan izinkan lokasi untuk melihat layanan di sekitar Anda. Di kota yang belum dilayani, Anda dapat mendaftar di daftar tunggu kota dari aplikasi.</p>
       </details>
       <details class="rv">
         <summary>Apakah harus instal aplikasi?<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
@@ -651,7 +922,23 @@ footer a:hover{color:#fff}
       </details>
       <details class="rv">
         <summary>Bagaimana cara bayar? Bisa tunai?<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <p>Bisa. Setiap pesanan bisa dibayar tunai langsung ke mitra atau dengan saldo AntarPay. Saldo diisi lewat transfer bank, e-wallet, atau QRIS yang diproses Midtrans. Estimasi total selalu tampil sebelum Anda menekan tombol pesan.</p>
+        <p>Bisa. Pesanan dapat dibayar tunai langsung ke mitra, atau nontunai (saldo AntarPay, transfer bank/virtual account, e-wallet, QRIS) yang diproses mitra pembayaran berizin. Metode yang tersedia dapat berbeda sewaktu-waktu dan selalu tampil di aplikasi. Rincian dan total tampil sebelum Anda menekan konfirmasi.</p>
+      </details>
+      <details class="rv">
+        <summary>Apa saja biaya yang saya bayar?<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p>Hanya komponen yang tampil di rincian sebelum konfirmasi: nilai barang (bila ada), ongkir atau tarif perjalanan, biaya platform AntarKita, biaya tambahan yang Anda setujui (mis. parkir, tol, titik tambahan), dan biaya metode pembayaran bila dinyatakan dibebankan kepada Anda. Promo dikurangkan dengan menyebut penanggungnya. Lihat <a href="#biaya">contoh rincian checkout</a>.</p>
+      </details>
+      <details class="rv">
+        <summary>Bagaimana pembatalan dan pengembalian dana?<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p>Tergantung tahap pesanan. Sebelum merchant menerima pesanan, dana dikembalikan penuh. Setelah pesanan diproses, nilai barang yang sudah disiapkan tidak dikembalikan; ongkir dikembalikan bila driver belum mengambil pesanan; biaya platform dikembalikan. Biaya metode pembayaran yang dibebankan kepada Anda tidak dikembalikan bila mitra pembayaran tidak mengembalikannya. Waktu proses bergantung pada kanal pembayaran — rinciannya ada di <a href="https://apps.antarkitaindonesia.com/terms/#pembatalan" rel="noopener">Syarat &amp; Ketentuan</a>.</p>
+      </details>
+      <details class="rv">
+        <summary>Ada selisih tagihan. Ke mana saya melapor?<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p>Buka rincian pesanan di aplikasi, lalu ketuk <strong>Laporkan selisih</strong> (atau buat tiket di menu Bantuan). Setiap pembayaran punya kode bantuan berformat <span class="code-chip">AK-xxxxxx</span>; sebutkan kode itu bila Anda menghubungi CS lewat WhatsApp atau email agar transaksi Anda langsung ditemukan.</p>
+      </details>
+      <details class="rv">
+        <summary>Apakah ada iklan di aplikasi?<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <p>Ada, dari merchant yang memilih beriklan. Setiap iklan — merchant, menu, hasil pencarian, banner, promo radius, atau voucher bersponsor — selalu diberi label <strong>Sponsored</strong> dan ditempatkan terpisah dari urutan biasa. Iklan tidak memakai data Anda untuk jaringan iklan pihak ketiga, dan jumlah tampilan iklan yang sama per hari dibatasi.</p>
       </details>
       <details class="rv">
         <summary>Apakah nomor HP saya dibagikan ke mitra?<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
@@ -664,12 +951,43 @@ footer a:hover{color:#fff}
       <details class="rv">
         <summary>Bagaimana menghubungi CS?<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
         <!-- [ASUMSI] Jam layanan CS "Setiap hari 07.00–22.00 WIB" belum dikonfirmasi pemilik; ganti bila berbeda. -->
-        <p>Tiga jalur: <strong>WhatsApp</strong> ke <a href="https://wa.me/628117805600?text=Halo%20AntarKita" target="_blank" rel="noopener">0811-7805-600</a> (setiap hari 07.00–22.00 WIB), <strong>email</strong> ke <a href="mailto:erzamadana@gmail.com">erzamadana@gmail.com</a>, atau buat <strong>tiket aduan di aplikasi</strong> lewat menu Bantuan agar riwayat pesanan Anda langsung terlampir.</p>
+        <p>Tiga jalur: <strong>WhatsApp</strong> ke <a href="https://wa.me/628117805600?text=Halo%20AntarKita" target="_blank" rel="noopener">0811-7805-600</a> (setiap hari 07.00–22.00 WIB), <strong>email</strong> ke <a href="mailto:erzamadana@gmail.com">erzamadana@gmail.com</a>, atau buat <strong>tiket aduan di aplikasi</strong> lewat menu Bantuan agar riwayat pesanan Anda langsung terlampir. Siapkan kode bantuan <span class="code-chip">AK-xxxxxx</span> bila pertanyaan Anda menyangkut pembayaran.</p>
       </details>
       <details class="rv">
         <summary>Bagaimana cara menghapus akun?<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
         <p>Akun bisa dihapus dari menu <strong>Akun → Lainnya → Hapus akun</strong> di aplikasi, atau lewat halaman <a href="https://apps.antarkitaindonesia.com/hapus-akun/" rel="noopener">permintaan hapus akun</a>. Bila ada kendala, hubungi CS lewat WhatsApp, email, atau tiket aduan di aplikasi.</p>
       </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BANTUAN ===== -->
+<section class="section help" id="bantuan" aria-labelledby="judul-bantuan">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Bantuan</span>
+      <h2 class="h2" id="judul-bantuan">Kanal bantuan resmi</h2>
+      <p class="lead">Hanya kanal di bawah ini yang resmi. AntarKita tidak pernah meminta PIN, kata sandi, atau kode OTP Anda.</p>
+    </div>
+    <div class="safe-grid">
+      <article class="safe rv">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.7 7.1L4 20l1.4-4.2A8 8 0 1 1 20 11.5z"/><path d="M9 9.2c0 3.2 2.6 5.8 5.8 5.8l1.1-1.5-1.8-1-.9.8a4.2 4.2 0 0 1-2.5-2.5l.8-.9-1-1.8z"/></svg></span>
+        <h3>WhatsApp / CS</h3>
+        <p>0811-7805-600 — untuk pertanyaan pesanan, pembayaran, dan pendaftaran mitra.</p>
+        <a class="more" href="https://wa.me/628117805600?text=Halo%20AntarKita" target="_blank" rel="noopener">Chat WhatsApp</a>
+      </article>
+      <article class="safe rv">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></span>
+        <h3>Laporan di aplikasi</h3>
+        <p>Tiket aduan dan <strong>Laporkan selisih</strong> dari rincian pesanan — riwayat pesanan dan kode bantuan <span class="code-chip">AK-xxxxxx</span> otomatis terlampir.</p>
+        <a class="more" href="https://apps.antarkitaindonesia.com/" rel="noopener">Buka aplikasi</a>
+      </article>
+      <article class="safe rv">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+        <h3>Email</h3>
+        <p>Untuk permintaan tertulis, termasuk data pribadi dan penghapusan akun. Kirim dari alamat email yang terdaftar.</p>
+        <a class="more" href="mailto:erzamadana@gmail.com">erzamadana@gmail.com</a>
+      </article>
     </div>
   </div>
 </section>
@@ -680,7 +998,7 @@ footer a:hover{color:#fff}
     <div class="rv">
       <span class="eyebrow">Mulai sekarang</span>
       <h2 class="h2" id="judul-unduh">Coba AntarKita hari ini</h2>
-      <p class="lead">Pakai langsung di peramban, atau pasang APK Android. Versi Google Play menyusul.</p>
+      <p class="lead">Pakai langsung di peramban, atau pasang APK Android dari halaman rilis resmi. Versi Google Play menyusul; tautan akan dipasang di sini begitu tersedia.</p>
     </div>
     <div class="dl-grid">
       <div class="dl rv">
@@ -704,10 +1022,14 @@ footer a:hover{color:#fff}
       </div>
     </div>
     <div class="dl-mitra rv">
-      <span>Ingin jadi mitra?</span>
-      <a class="link" href="https://apps.antarkitaindonesia.com/mitra/" rel="noopener">Buka aplikasi AntarKita Mitra</a>
-      <span class="sep" aria-hidden="true">·</span>
-      <a class="link" href="https://github.com/erzamadana-ui/antarkita/releases/latest" rel="noopener">APK Mitra ada di halaman rilis yang sama</a>
+      <span>Ingin jadi mitra driver, merchant, pedagang pasar, atau mitra travel? APK Mitra ada di <a class="link" href="https://github.com/erzamadana-ui/antarkita/releases/latest" rel="noopener">halaman rilis yang sama</a>.</span>
+    </div>
+    <div class="dl-cta rv">
+      <a class="btn btn-accent" href="https://apps.antarkitaindonesia.com/mitra/" rel="noopener">Daftar mitra</a>
+      <a class="btn btn-ghost-light" href="https://wa.me/628117805600?text=Halo%20AntarKita%2C%20saya%20ingin%20bertanya" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.7 7.1L4 20l1.4-4.2A8 8 0 1 1 20 11.5z"/><path d="M9 9.2c0 3.2 2.6 5.8 5.8 5.8l1.1-1.5-1.8-1-.9.8a4.2 4.2 0 0 1-2.5-2.5l.8-.9-1-1.8z"/></svg>
+        Hubungi kami via WhatsApp
+      </a>
     </div>
   </div>
 </section>
@@ -723,7 +1045,7 @@ footer a:hover{color:#fff}
           <img src="assets/logo.svg" width="36" height="36" alt="" loading="lazy">
           <span>Antar<em>Kita</em></span>
         </a>
-        <p>Super-app lokal Indonesia untuk ojek, makanan, kirim barang, belanja pasar, mobil box, travel antar kota, dan dompet AntarPay. Antar apa saja, bersama kita.</p>
+        <p>Super-app on-demand dari Sumatra untuk ojek, makanan, kirim barang, belanja, mobil box, dan travel antar kota. Aktif di Batam, Dumai, Padang, dan Pekanbaru. Antar apa saja, bersama kita.</p>
       </div>
       <div>
         <h4>Aplikasi</h4>
@@ -740,6 +1062,7 @@ footer a:hover{color:#fff}
           <li><a href="https://apps.antarkitaindonesia.com/privacy/" rel="noopener">Kebijakan Privasi</a></li>
           <li><a href="https://apps.antarkitaindonesia.com/terms/" rel="noopener">Syarat &amp; Ketentuan</a></li>
           <li><a href="https://apps.antarkitaindonesia.com/hapus-akun/" rel="noopener">Permintaan hapus akun</a></li>
+          <li><a href="#biaya">Transparansi biaya</a></li>
         </ul>
       </div>
       <div>
@@ -755,8 +1078,8 @@ footer a:hover{color:#fff}
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-            <!-- [ASUMSI] kota belum dikonfirmasi pemilik — alamat ditampilkan persis seperti yang diberikan, tanpa kota/kode pos. -->
-            <span><span class="lbl">Alamat</span><address>Kahuripan Terrace VII-21</address></span>
+            <!-- Kota belum dikonfirmasi pemilik: placeholder sengaja terlihat, jangan dihapus sebelum diisi. -->
+            <span><span class="lbl">Alamat usaha</span><address>Kahuripan Terrace VII-21, <span class="ph">[KOTA — konfirmasi pemilik]</span></address></span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
@@ -765,13 +1088,17 @@ footer a:hover{color:#fff}
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7M12 17h.01"/></svg>
-            <span><a href="#faq">Pusat bantuan (FAQ)</a></span>
+            <span><a href="#bantuan">Kanal bantuan</a> · <a href="#faq">FAQ</a></span>
           </li>
         </ul>
       </div>
     </div>
+    <!-- Informasi penyelenggara: belum ada badan hukum terkonfirmasi (24 Sep 2026). Jangan menulis bentuk badan hukum sebelum akta dan NIB terbit. -->
+    <div class="operator">
+      <strong>Informasi penyelenggara.</strong> Dioperasikan oleh AntarKita (Erza Pradipta Madana). Badan usaha: <span class="ph">[PERLU KONFIRMASI: nama badan usaha &amp; NIB]</span>. Alamat usaha: Kahuripan Terrace VII-21, <span class="ph">[KOTA — konfirmasi pemilik]</span>. Pembayaran nontunai diproses oleh mitra pembayaran berizin. Kontak: WhatsApp/CS 0811-7805-600 · erzamadana@gmail.com.
+    </div>
     <div class="foot-bottom">
-      <span>© 2026 AntarKita Indonesia. Hak cipta dilindungi.</span>
+      <span>© 2026 AntarKita. Hak cipta dilindungi.</span>
       <span>Mitra adalah mitra usaha independen. Nama layanan AntarRide, AntarCar, AntarFood, AntarSend, AntarBox, AntarShop, AntarMarket, AntarTravel, dan AntarPay adalah bagian dari platform AntarKita.</span>
     </div>
   </div>
